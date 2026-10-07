@@ -216,10 +216,41 @@ def main():
     disc_ok = sum(status[k]["ok"] for k in ("arxiv_search", "huggingface_search", "openalex_search"))
     out["reliable"] = bool(cit_ok and disc_ok >= 2)
     os.makedirs("data", exist_ok=True)
-    with open("data/latest.json", "w") as f:
-        json.dump(out, f, indent=1, ensure_ascii=False)
+
+    def dump(name, obj):
+        with open(f"data/{name}", "w") as f:
+            json.dump(obj, f, indent=1, ensure_ascii=False)
+
+    # 1) tiny status file - the agent reads this first
+    dump("status.json", {
+        "generated_utc": out["generated_utc"], "finished_utc": out["finished_utc"],
+        "reliable": out["reliable"], "since": SINCE, "visreg": out["visreg"],
+        "source_status": status,
+        "counts": {"s2_citations": len(out["s2_citations"]), "openalex_citations": len(out["openalex_citations"]),
+                   "discovery_unique_papers": 0},
+    })
+    # 2) citations (Task B)
+    dump("citations.json", {"generated_utc": out["generated_utc"],
+                            "s2_citations": out["s2_citations"], "openalex_citations": out["openalex_citations"]})
+    # 3) discovery (Task A): one row per paper, merged across sources and queries
+    merged = {}
+    for h in out["arxiv_hits"] + out["huggingface_hits"] + out["openalex_hits"]:
+        aid = (h.get("arxiv_id") or "")
+        aid = aid.split("v")[0] if aid else ""
+        key = aid or h.get("openalex_id") or (h.get("title") or "").lower()
+        m = merged.setdefault(key, {"key": key, "title": h.get("title"), "date": h.get("date"),
+                                    "authors": h.get("authors"), "abstract": (h.get("abstract") or "")[:600],
+                                    "url": h.get("url"), "sources": [], "matched_queries": []})
+        if h["source"] not in m["sources"]: m["sources"].append(h["source"])
+        if h.get("matched_query") not in m["matched_queries"]: m["matched_queries"].append(h.get("matched_query"))
+        if not m["abstract"] and h.get("abstract"): m["abstract"] = h["abstract"][:600]
+        if not m["authors"] and h.get("authors"): m["authors"] = h["authors"]
+    disc = sorted(merged.values(), key=lambda x: x.get("date") or "", reverse=True)
+    dump("discovery.json", {"generated_utc": out["generated_utc"], "papers": disc})
+    st = json.load(open("data/status.json")); st["counts"]["discovery_unique_papers"] = len(disc)
+    dump("status.json", st)
     print(json.dumps(status, indent=1))
-    print("reliable:", out["reliable"])
+    print("reliable:", out["reliable"], "| discovery papers:", len(disc))
 
 if __name__ == "__main__":
     main()
