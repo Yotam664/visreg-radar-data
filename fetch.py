@@ -130,7 +130,7 @@ def oa_citations(wid):
     return out, count
 
 def oa_search(q):
-    d = oa("works", search=q, filter=f"from_publication_date:{SINCE}", **{"per-page": 25, "sort": "publication_date:desc"})
+    d = oa("works", search=q, filter=f"from_publication_date:{SINCE}", **{"per-page": 15})
     return [oa_work(w) for w in d.get("results", [])]
 
 # ---------------------------------------------------------------- arXiv
@@ -165,6 +165,8 @@ def hf_search(q):
     for p in d:
         pub = (p.get("publishedAt") or p.get("paper", {}).get("publishedAt") or "")[:10]
         pp = p.get("paper", p)
+        if pub and pub < SINCE:
+            continue   # HF search is semantic and returns old papers; keep only papers since the baseline date
         res.append({"source": "huggingface", "arxiv_id": pp.get("id"), "title": pp.get("title"),
                     "date": pub, "url": f"https://huggingface.co/papers/{pp.get('id')}"})
     time.sleep(1)
