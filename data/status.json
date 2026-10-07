@@ -1,6 +1,6 @@
 {
- "generated_utc": "2026-10-07T18:30:55Z",
- "finished_utc": "2026-10-07T18:32:55Z",
+ "generated_utc": "2026-10-07T18:36:06Z",
+ "finished_utc": "2026-10-07T18:37:56Z",
  "reliable": true,
  "since": "2026-06-01",
  "visreg": {
@@ -25,16 +25,16 @@
   },
   "huggingface_search": {
    "ok": true,
-   "detail": "19/19 queries ok, 1613 raw hits"
+   "detail": "19/19 queries ok, 206 raw hits"
   },
   "openalex_search": {
    "ok": true,
-   "detail": "19/19 queries ok, 440 raw hits"
+   "detail": "19/19 queries ok, 270 raw hits"
   }
  },
  "counts": {
   "s2_citations": 14,
   "openalex_citations": 0,
-  "discovery_unique_papers": 1369
+  "discovery_unique_papers": 334
  }
 }
