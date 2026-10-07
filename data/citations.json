@@ -1,0 +1,394 @@
+{
+ "generated_utc": "2026-10-07T18:30:55Z",
+ "s2_citations": [
+  {
+   "source": "semantic_scholar",
+   "s2_id": "6373bfcb0f41dd514b6444d2efe39e1eec8177b7",
+   "title": "VR-JEPA: Learning Contrastive-State Latent Guidance for Generation-based Video Reasoning",
+   "year": 2026,
+   "date": "2026-09-30",
+   "venue": "",
+   "external_ids": {
+    "ArXiv": "2609.40129",
+    "CorpusId": 292486900
+   },
+   "authors": [
+    "Ze-Hua Ma",
+    "Kun Xiang",
+    "Yun-Shuang Nie",
+    "Quan-Lin Chen",
+    "Hao-Yuan Li",
+    "Xiu-Wei Chen",
+    "Jiang Ji",
+    "Hai-Jun Wu",
+    "Zhen-Yu Xie",
+    "Michael C. Kampffmeyer",
+    "Han-Hui Li",
+    "Xiao-Dan Liang"
+   ],
+   "abstract": "Reasoning through video generation offers a promising path toward visual intelligence by modeling latent visual states and their dynamics. However, current video generation models often lack explicit guidance on how these states should evolve, leaving generated trajectories prone to physical and structural inconsistencies that undermine reasoning reliability. While the Video Joint-Embedding Predictive Architecture (V-JEPA) provides rich spatiotemporal priors learned through latent prediction, these general priors do not naturally adapt to the logical reasoning capabilities required for complex visual tasks. To bridge this gap, we propose VR-JEPA, a framework that aligns the V-JEPA predictor with task-specific reasoning logic through localized contrastive-state learning and uses its predicted latent trajectories to guide video generation for visual reasoning. Specifically, (i) we pair successful trajectories with generated alternatives under the same input conditions and use discrepancies in their V-JEPA representations to identify informative states and tokens for localized contrastive supervision. (ii) We further equip the V-JEPA predictor with skill-specific experts trained on an",
+   "url": "https://www.semanticscholar.org/paper/6373bfcb0f41dd514b6444d2efe39e1eec8177b7",
+   "contexts": [
+    "Predict the next color in the sequence."
+   ],
+   "intents": [],
+   "is_influential": false
+  },
+  {
+   "source": "semantic_scholar",
+   "s2_id": "2745a411fb871ba63c9f56c7acbc3523ea788138",
+   "title": "$\\lambda$-JEPA Spectral Anti-Collapse Regularization for Self-Supervised Learning",
+   "year": 2026,
+   "date": "2026-09-28",
+   "venue": "",
+   "external_ids": {
+    "ArXiv": "2609.35288",
+    "CorpusId": 292434561
+   },
+   "authors": [
+    "Berker Demirel",
+    "C. Dominé",
+    "Valentino Maiorca",
+    "Marco Fumero",
+    "Marco Mondelli",
+    "Francesco Locatello"
+   ],
+   "abstract": "Joint-embedding self-supervised learning typically combines an invariance objective across augmented views with additional mechanisms to prevent representational collapse. These objectives are often applied after a projection head, while downstream tasks use the backbone representation before the projector. We find that this mismatch does not necessarily prevent dimensional collapse in the backbone, which can retain low effective rank and potentially limit downstream transfer. To address this, we introduce SACReg, a spectral anti-collapse regularizer motivated by an analysis of $\\lambda$-balance, which captures the relative scale of weight matrices across layers. In a two-layer linear network, we show that (i) $\\lambda$-balance prevents collapse, and (ii) our regularizer applied to the backbone induces $\\lambda$-balance. In the nonlinear case, this regularizer leads to anti-collapse as well and, in realistic architectures on ImageNet100, it empirically increases the representations'ranks. We apply SACReg to JEPA and propose $\\lambda$-JEPA, which improves over LeJEPA and VISReg on ImageNet-1k classification and in average linear-probe transfer performance across eight downstream ima",
+   "url": "https://www.semanticscholar.org/paper/2745a411fb871ba63c9f56c7acbc3523ea788138",
+   "contexts": [
+    "…to the backbone representations of six existing augmentation-based SSL methods on ImageNet-100 (Tian et al., 2020a): LeJEPA (Balestriero & Le-Cun, 2025), VICReg (Bardes et al., 2022), VISReg (Wu et al., 2026), SimCLR (Chen et al., 2020), DINO (Caron et al., 2021), and BYOL (Grill et al., 2020).",
+    "At larger scale, it outperforms both LeJEPA (Balestriero & LeCun, 2025) and VISReg (Wu et al., 2026) on ImageNet-1K (Russakovsky et al., 2015) trained from scratch, with performance approaching DINO (Caron et al., 2021) in both linear probing and transfer learning.",
+    "These mechanisms include using contrastive negatives (Chen et al., 2020; He et al., 2020), asymmetric teacher-student training (Caron et al., 2021; Zhou et al., 2022; Grill et al., 2020) and explicit anti-collapse regularization (Balestriero & LeCun, 2025; Bardes et al., 2022; Wu et al., 2026).",
+    "We focus on a family of explicitly regularized methods (VICReg (Bardes et al., 2022), LeJEPA (Balestriero & LeCun, 2025), VISReg (Wu et al., 2026)).",
+    "…2009), Flowers (Nilsback & Zisserman, 2008), Food (Bossard et al., 2014) and Pets (Parkhi et al., 2012) with the splits of the VISReg protocol (Wu et al., 2026); video encoders are evaluated on ImageNet-1k, Something-Something-v2 (Goyal et al., 2017) and Kinetics-400 (Kay et al., 2017)."
+   ],
+   "intents": [],
+   "is_influential": true
+  },
+  {
+   "source": "semantic_scholar",
+   "s2_id": "1cb318e4eee78c97d5ba10401b47f2d1ebc361ee",
+   "title": "AD-E2E-JEPA: A Joint-Embedding Predictive Architecture For End-to-End Autonomous Driving",
+   "year": 2026,
+   "date": "2026-09-28",
+   "venue": "",
+   "external_ids": {
+    "ArXiv": "2609.34085",
+    "CorpusId": 292435980
+   },
+   "authors": [
+    "Hao-Ran Zhu",
+    "Wan-Cong Zhang",
+    "Yann LeCun",
+    "A. Choromanska"
+   ],
+   "abstract": "Autonomous driving requires \\textit{world models} that can understand the physical world, reason and plan, and operate safely. In this paper, we first systematically evaluate existing action-conditioned joint-embedding predictive architecture (JEPA) world models, including LeWM, DINO-WM, and JEPA-WM for end-to-end autonomous driving (E2EAD). To isolate world-model quality from policy learning, we employ a goal-conditioned zero-shot planning setting that evaluates these models using ground-truth future observations as goals, without training any driving policy. We find that existing JEPA-based world models are either accurate for driving but computationally expensive, or computationally efficient but insufficient for planning. To address this trade-off, we propose \\textbf{AD-E2E-JEPA}, which introduces a SIGReg-regularized learnable projector applied to projected patch embeddings. The projector reduces the number of planning patches by $16\\times$ and the embedding dimension by $4\\times$, achieving a $100\\times$ inference speedup while retaining planning performance, with a 0.8-second runtime for an 8-frame rollout over 256 candidate trajectories. \\textit{Without} training any drivin",
+   "url": "https://www.semanticscholar.org/paper/1cb318e4eee78c97d5ba10401b47f2d1ebc361ee",
+   "contexts": [
+    "…of target data y from context data x , with regularization-based methods (Bardes et al., 2021; Balestriero & LeCun, 2025; Kuang et al., 2026b; Wu et al., 2026) maximizing information to avoid representation collapse, in which all representations converge to a constant vector and become…"
+   ],
+   "intents": [],
+   "is_influential": false
+  },
+  {
+   "source": "semantic_scholar",
+   "s2_id": "6408753b4f98375de3ed4738395a80d59edebd92",
+   "title": "Adaptive Latent Capacity for World Models",
+   "year": 2026,
+   "date": "2026-09-26",
+   "venue": "",
+   "external_ids": {
+    "ArXiv": "2609.32921",
+    "CorpusId": 292433584
+   },
+   "authors": [
+    "Idan Achituve",
+    "Lior Dikstein",
+    "Idit Diamant",
+    "Arnon Netzer",
+    "H. Habi"
+   ],
+   "abstract": "We introduce Adaptive LeWorldModel (ALeWM), a world model based on a joint-embedding predictive architecture (JEPA) that learns to concentrate predictive information in compact prefixes of a wide latent representation. To encourage this ordering, ALeWM learns a sequence-conditioned distribution over prefix lengths and trains the predictor to estimate the full next embedding from a sampled input prefix. As standard anti-collapse objectives encourage variation across latent coordinates and do not organize them by predictive importance, we also introduce MixSIGReg. MixSIGReg regularizes the masked embeddings against a prior-weighted mixture with Gaussian active prefixes and zeros in the remaining coordinates. As a result, the ALeWM objective encourages early coordinates to retain information useful for prediction and recursive planning. Our analysis shows that the mixture distribution used by MixSIGReg assigns higher variance to earlier coordinate blocks and lower variance to later ones. In addition, we show that, under specified assumptions, prediction error is minimized by placing the information most useful for prediction in earlier blocks. Empirically, we study the behavior of ALe",
+   "url": "https://www.semanticscholar.org/paper/6408753b4f98375de3ed4738395a80d59edebd92",
+   "contexts": [
+    "SIGReg matches random projections to a standard Gaussian (Balestriero & LeCun, 2025; Zimmer-mann et al., 2025), while VISReg separates scale control from sliced-Wasserstein distribution-shape matching (Wu et al., 2026)."
+   ],
+   "intents": [],
+   "is_influential": false
+  },
+  {
+   "source": "semantic_scholar",
+   "s2_id": "0901213da65c50e2a56c70e2e7847a1a90164b88",
+   "title": "Spectral-Target Physical Latent Structuring for JEPA-Style World Models",
+   "year": 2026,
+   "date": "2026-09-02",
+   "venue": "",
+   "external_ids": {
+    "ArXiv": "2609.04264",
+    "CorpusId": 291768046
+   },
+   "authors": [
+    "Peng Zhu",
+    "Salvatore Penachio",
+    "Kaustav Mukherjee",
+    "Aneesh Jonelagadda"
+   ],
+   "abstract": "Latent world models have become increasingly popular as a method to predict and plan in latent space rather than pixel space. Recent architectures, such as LeWorldModel (LeWM), jointly train the encoder and predictor using regularization techniques like SIGReg to prevent representation collapse. Even with such regularization preventing representation collapse, we identify a new world model failure mode of physical representation laziness, particularly noted in highly dynamic environments. For these lazy cases, the learned latent states do not collapse but nonetheless fail to represent key physical properties, causing ubiquitous downstream planning failure. To resolve this issue, we propose training-time auxiliary supervision with a lightweight\"Fourier auxiliary head\", which enforces physically-informed structuring of the latent space with no additional inference-time cost and can be generalized to any environment. Experimentally, we show that the auxiliary head substantially improves planning success rates in dynamic environments where the baseline LeWM exhibits physical representation laziness. It also leads to modest improvements in other environments, even when the baseline does",
+   "url": "https://www.semanticscholar.org/paper/0901213da65c50e2a56c70e2e7847a1a90164b88",
+   "contexts": [
+    "We provide a further theoretical discussion on the Fourier auxiliary head performance with both SIGReg and VISReg (Wu et al., 2026), a popular newer alternative to SIGReg, in the Appendix (A.2).",
+    "09 , matching the value used in both official SIGReg and VISReg repositories.",
+    "Interestingly, our Fourier auxiliary head training empirically yields improved planning performance with SIGReg (Balestriero & LeCun, 2025) instead of VISReg (Wu et al., 2026), even though VISReg exhibits higher performance than SIGReg on the standard LeWorldModel.",
+    "Very recently, there is a proposal to prevent the collapse called the Variance-Invariance-Sketching Regu-larization (VISReg) instead of SIGReg Wu et al. (2026)."
+   ],
+   "intents": [],
+   "is_influential": true
+  },
+  {
+   "source": "semantic_scholar",
+   "s2_id": "f8924a25c3612254fb0b94c1038e119d90e53410",
+   "title": "Capturing Cardiac Cyclicity through Phase-Equivariant Self-Supervised Learning",
+   "year": 2026,
+   "date": "2026-08-21",
+   "venue": "",
+   "external_ids": {
+    "ArXiv": "2608.21147",
+    "CorpusId": 291319903
+   },
+   "authors": [
+    "Blaise Delaney",
+    "D. Dootson",
+    "Juan Jose Juan Castella",
+    "Salil B. Patel",
+    "Andrew Pfaff",
+    "Yu-Jian Xing",
+    "Jonny Hancox",
+    "Karin Sevegnani"
+   ],
+   "abstract": "The cyclic structure of physiological processes offers a natural prior for self-supervised representation learning, and the cardiac cycle provides a particularly well-defined setting in which to exploit it. We derive a phase-equivariant self-supervised objective and introduce Winder, a joint-embedding architecture that organises representations into phase-invariant coordinates and phase-rotating harmonic subspaces. Its transport operator is fixed and closed-form, derived from the cycle's geometry rather than learned, and adds no parameters. Evaluated on PTB-XL under a frozen linear-probe protocol, Winder attains diagnostic accuracy within the range reported by state-of-the-art self-supervised methods at a ~1 M parameter footprint, while exhibiting phase-equivariant latent geometry. These findings demonstrate that explicitly encoding cardiac-phase symmetry can preserve diagnostically useful information while yielding a latent geometry that is legible, parameter-efficient, and directly tied to a measurable physiological quantity.",
+   "url": "https://www.semanticscholar.org/paper/f8924a25c3612254fb0b94c1038e119d90e53410",
+   "contexts": [
+    "…recipe’s every component has been revised in turn: the target geometry, rectified toward sparsity [12], or proven suboptimal to a uniform sphere on manifolds [13]; the test statistic [14]; and the constraint’s ambient scope, which Sub-JEPA restricts to random, deliberately frozen subspaces [15]."
+   ],
+   "intents": [],
+   "is_influential": false
+  },
+  {
+   "source": "semantic_scholar",
+   "s2_id": "bcf914375c30492a0e14e8e289eb1d9794e887bd",
+   "title": "Listening Forward: Next Patch Embedding Prediction Enables Scalable Audio Learners",
+   "year": 2026,
+   "date": "2026-08-20",
+   "venue": "",
+   "external_ids": {
+    "ArXiv": "2608.19863",
+    "CorpusId": 291257467
+   },
+   "authors": [
+    "Umberto Cappellazzo",
+    "Xu-Bo Liu",
+    "Stavros Petridis",
+    "Maja Pantic"
+   ],
+   "abstract": "Self-supervised learning (SSL) has driven substantial progress in audio representation learning, though existing methods have increasingly relied on elaborate pre-training recipes to reach competitive performance. A markedly different pre-training philosophy underpins the most influential progress in language modeling and, more recently, in visual representation learning: rather than train encoders as static feature extractors, models are trained to predict the next element, a discrete token or a continuous embedding, from the preceding context. Autoregressive prediction thereby provides a unified pre-training interface that transfers across modalities, compelling the model to learn the underlying data distribution. We ask whether such a simple causal paradigm can yield strong audio learners, given that audio's temporal structure makes autoregressive prediction of patch embeddings a natural fit. We introduce NAPE (Next-Audio-Patch-Embedding prediction), a self-supervised framework in which a causal Transformer predicts each next patch embedding of a log-mel spectrogram from the previous ones, using causal masking and stop-gradient as its sole training signal. The design is intentio",
+   "url": "https://www.semanticscholar.org/paper/bcf914375c30492a0e14e8e289eb1d9794e887bd",
+   "contexts": [
+    "…this instability with additional regularization such as EMA teachers (Assran et al., 2023; Fei et al., 2023), variance-covariance regularizers such as VISReg (Wu et al., 2026) and sketched isotropic gaussian regularizers such as SIGReg (Balestriero & LeCun, 2025), which we do not employ here.",
+    "…(Assran et al., 2023; Oquab et al., 2023; Fei et al., 2023; Bardes et al., 2024; Balestriero & LeCun, 2025; Yuksel et al., 2025; Huang et al., 2026; Wu et al., 2026) predict the latent embeddings of masked regions from a context view, produced by a target branch that is typically maintained via an…",
+    "JEPA-family methods circumvent this instability with additional regularization such as EMA teachers (Assran et al., 2023; Fei et al., 2023), variance-covariance regularizers such as VISReg (Wu et al., 2026) and sketched isotropic gaussian regularizers such as SIGReg (Balestriero & LeCun, 2025), which we do not employ here."
+   ],
+   "intents": [],
+   "is_influential": false
+  },
+  {
+   "source": "semantic_scholar",
+   "s2_id": "15e6f89478a2e448d79f70ef3cd3b7c469030879",
+   "title": "Gaussian-JEPA: Joint-Embedding Predictive Learning for 3D Gaussian Splats",
+   "year": 2026,
+   "date": "2026-08-16",
+   "venue": "",
+   "external_ids": {
+    "ArXiv": "2608.15651",
+    "CorpusId": 291183970
+   },
+   "authors": [
+    "Bin Ren",
+    "Qi Ma",
+    "Yue Li",
+    "Zong-Yan Han",
+    "Yi-Di Li",
+    "Yu-Qian Fu",
+    "R. Anwer",
+    "Theo Gevers",
+    "F. Khan",
+    "Salman H. Khan"
+   ],
+   "abstract": "3D Gaussian Splatting (3DGS) represents 3D content with anisotropic primitives that jointly encode geometry and appearance. Fixed-budget encoders consume sampled observations of Gaussian assets, so the same object may be observed through different primitive realizations. Existing self-supervised methods mainly reconstruct masked Gaussian attributes, tying supervision to one sampled realization and requiring an input-space decoder. Latent prediction offers an alternative, but its application to Gaussian tokens requires targets that accommodate coupled attributes and heterogeneous spatial support. We introduce Gaussian-JEPA, which predicts representations of held-out Gaussian token blocks from visible context. An online encoder processes the context, while a shared exponential-moving-average encoder supplies stop-gradient features for multi-scale targets. Complementary target projections and feature-space grounding provide latent supervision without reconstructing Gaussian attributes. We evaluate the features under Gaussian resampling, partial observations, and renderable shape completion, together with transfer to part segmentation and object classification. Compared with matched re",
+   "url": "https://www.semanticscholar.org/paper/15e6f89478a2e448d79f70ef3cd3b7c469030879",
+   "contexts": [],
+   "intents": [],
+   "is_influential": false
+  },
+  {
+   "source": "semantic_scholar",
+   "s2_id": "5fc9c1fe5b7e9055c7b467c4ed3c57fed27821de",
+   "title": "VIScore: Diagnosing Planning-Relevant Quality in Latent World Models",
+   "year": 2026,
+   "date": "2026-08-11",
+   "venue": "",
+   "external_ids": {
+    "ArXiv": "2608.11174",
+    "CorpusId": 291024311
+   },
+   "authors": [
+    "Hai-Yu Wu",
+    "Randall Balestriero",
+    "Morgan E. Levine"
+   ],
+   "abstract": "Regulating the latent space to an isotropic Gaussian distribution provides a stable and information-maximized landscape for world model planning. However, the latent space property and successful planning remain disconnected. We first study this by comparing SIGReg and VISReg, two regularization loss functions with the same distribution target but different properties. Compared with SIGReg, VISReg has more flexibility in controlling the weights of center, scale, and shape regularization, and a larger batch size brings a finer distribution approximation. We find that the former, despite being beneficial in self-supervised learning (SSL), does not help the planning, whereas the latter improves the planning success on out-of-domain (OOD) datasets. This motivates a deep understanding of the factors that correlate with the success rate. Unlike the previous metrics focusing on the encoded latent only, we propose the Veracity-Influence-Sobriety score (VIScore), a metric that quantifies the reachability and capacity of a predictor given the encoded feature, and the hallucination of the searching-based planner. Compared with straightness, physical-state probing, and empowerment, we show tha",
+   "url": "https://www.semanticscholar.org/paper/5fc9c1fe5b7e9055c7b467c4ed3c57fed27821de",
+   "contexts": [
+    "Reweighting the loss components of VISReg has been reported to be helpful for training on low-quality datasets in SSL (Wu et al., 2026).",
+    "We replace SIGReg with VISReg (Wu et al., 2026), which targets the same isotropic Gaussian distribution but separates center, scale, and shape constraints.",
+    "The data efficiency and lightweight training characteristics make Joint-Embedding Predictive Architecture (JEPA) an attractive approach for world-model training (Maes et al., 2026; Wang et al., 2026; Wu et al., 2026; Assran et al., 2025).",
+    "We first provide the training details and the SSL observations that motivate the regularization intervention.",
+    "In SSL, this separation yields a stronger corrective gradient near collapse and allows the components to be reweighted on long-tailed or low-rank data.",
+    "VISReg (Wu et al., 2026) targets the same prior but factorizes the constraint into independently weighted center, scale, and shape terms.",
+    "The regularizer and training objective are The factorization is useful in SSL for two reasons (Appendix B): the scale term retains a corrective gradient near collapse, and the three components can be reweighted and be helpful when the data are long-tailed or effectively low-rank.",
+    "VISReg (Wu et al., 2026) targets the same isotropic Gaussian prior while separating center, scale, and shape constraints, making the SIGReg–VISReg substitution a controlled test of which self-supervised properties remain consequential once the representation is used for planning."
+   ],
+   "intents": [],
+   "is_influential": true
+  },
+  {
+   "source": "semantic_scholar",
+   "s2_id": "2e7d429d80ff547c73abbe4fe7515b4caa912374",
+   "title": "QQWorld: Quantile-Quantile Matching for World Model Regularization",
+   "year": 2026,
+   "date": "2026-07-30",
+   "venue": "arXiv.org",
+   "external_ids": {
+    "DBLP": "journals/corr/abs-2607-28415",
+    "ArXiv": "2607.28415",
+    "DOI": "10.48550/arXiv.2607.28415",
+    "CorpusId": 290694851
+   },
+   "authors": [
+    "Zhou Yu",
+    "Xiaoyu Hu",
+    "Xiangyu Xu"
+   ],
+   "abstract": "Latent world models enable efficient planning by predicting future states in a compact representation space, but their performance depends critically on the quality of the learned latent distribution. LeWorldModel (LeWM) regularizes its latents toward an isotropic Gaussian using the Epps-Pulley (EP) objective. We show that the corrective gradients of EP rapidly vanish for isolated tail samples, leaving heavy-tailed deviations insufficiently controlled. To address this limitation, we propose QQWorld, which replaces EP with a quantile-quantile matching objective that directly aligns projected latent samples with rank-matched Gaussian quantiles, thereby maintaining effective corrective gradients in the tails. We further develop cross-batch QQ, which enlarges the effective ranking pool using detached samples from previous batches, and characterize its bias-variance trade-off. Across four control environments, QQWorld effectively improves the average planning success rate of LeWM, while consistently yielding better Gaussian alignment and thinner latent tails.",
+   "url": "https://www.semanticscholar.org/paper/2e7d429d80ff547c73abbe4fe7515b4caa912374",
+   "contexts": [],
+   "intents": [],
+   "is_influential": false
+  },
+  {
+   "source": "semantic_scholar",
+   "s2_id": "596bf4e3afd1c20dad39418461165b5731134bca",
+   "title": "A Framework for Early Sepsis Prediction via Self-Supervised (JEPA) and Federated Representation Learning",
+   "year": 2026,
+   "date": "2026-07-18",
+   "venue": "arXiv.org",
+   "external_ids": {
+    "DBLP": "journals/corr/abs-2607-16681",
+    "ArXiv": "2607.16681",
+    "DOI": "10.48550/arXiv.2607.16681",
+    "CorpusId": 290362205
+   },
+   "authors": [
+    "Umair bin Mansoor",
+    "Munaf Rashid",
+    "Roomi Naqvi"
+   ],
+   "abstract": "Early sepsis prediction from electronic health records is challenged by irregular sampling, high missingness, and class imbalance. We systematically compare four modeling paradigms -- self-supervised Joint Embedding Predictive Architecture (JEPA) via masked latent prediction, self-supervised VICReg (variance-invariance-covariance regularization) with two-view augmentation, semi-supervised fine-tuning of a VICReg-pretrained encoder, and supervised Temporal Convolutional Network (TCN) -- alongside raw-feature baselines. All models share a common preprocessing pipeline of hourly binning with forward-fill imputation applied to 7 biomarkers selected via sparsity analysis from the MIMIC-III dataset. Our best model (JEPA + XGBoost + mean pooling) achieves AUPRC 0.636 at the time of onset (H0), approaching the SupMix benchmark (0.667) while using 83\\% fewer biomarkers. The Tier 1 pipeline -- VICReg pretraining followed by semi-supervised fine-tuning and XGBoost -- achieves AUPRC 0.510 at H0, a 3.1$\\times$ improvement over the raw-feature baseline (0.165) and a 7.6\\% improvement over the end-to-end supervised TCN (0.474). Crucially, the fine-tuned VICReg encoder exhibits the most temporally",
+   "url": "https://www.semanticscholar.org/paper/596bf4e3afd1c20dad39418461165b5731134bca",
+   "contexts": [
+    "The covariance term enforces decorrelation but captures only second-order statistics, which recent work has identified as a limitation—VISReg [22] addresses this by replacing the covariance penalty with a Sliced-Wasserstein sketching objective that enforces full distributional shape, though we…",
+    "Sixth, adopting VISReg’s [22] sketching-based regularization in place of the covariance term in both JEPA and VICReg objectives may further improve representation quality by enforcing stronger distributional alignment in the latent space.",
+    "Most recently, Wu et al. [22] showed that VICReg’s covariance term captures only second-order statistics and proposed VISReg, which replaces it with a Sliced-Wasserstein sketching objective for full distributional alignment, yielding improved representation quality across diverse data regimes."
+   ],
+   "intents": [],
+   "is_influential": true
+  },
+  {
+   "source": "semantic_scholar",
+   "s2_id": "dea606c71050d4ba27ef8a5938959376f47294b9",
+   "title": "SiamJEPA: On the Role of Siamese Student Encoders in JEPA",
+   "year": 2026,
+   "date": "2026-07-04",
+   "venue": "arXiv.org",
+   "external_ids": {
+    "ArXiv": "2607.04044",
+    "DBLP": "journals/corr/abs-2607-04044",
+    "DOI": "10.48550/arXiv.2607.04044",
+    "CorpusId": 289935026
+   },
+   "authors": [
+    "Makoto Yamada"
+   ],
+   "abstract": "Joint Embedding Predictive Architectures (JEPAs) have emerged as a promising framework for self-supervised representation learning by predicting latent embeddings of masked regions rather than reconstructing pixels. Existing JEPA methods typically employ a single student encoder, leaving the role of Siamese student encoders largely unexplored. In this paper, we propose Siamese JEPA (SiamJEPA), a JEPA framework with masked Siamese student encoders and an exponential moving average (EMA) teacher, which can also be viewed as a JEPA formulation of the brain-inspired representation learning model PhiNet. We further introduce Random Shuffle Teacher (RST), which removes spatial correspondence in teacher targets to encourage semantic patch representations, and develop an RST-based semantic-to-spatial curriculum. Experiments on ImageNet show that Siamese student encoders effectively regularize the JEPA objective, improving representation separability and accelerating early-stage learning. Moreover, under RST, stronger Siamese regularization substantially increases class-discriminative information in individual patch tokens, suggesting that the semantic bias arises from the interaction betwe",
+   "url": "https://www.semanticscholar.org/paper/dea606c71050d4ba27ef8a5938959376f47294b9",
+   "contexts": [
+    "To alleviate this issue, Momentum Contrast (MoCo) was proposed, which employs a momentum encoder and a fixed-size queue to maintain negative samples [Chen et al., 2020b]."
+   ],
+   "intents": [],
+   "is_influential": false
+  },
+  {
+   "source": "semantic_scholar",
+   "s2_id": "3d45819ac7b5099976f582ac5f7c313e6a495a79",
+   "title": "Fast LeWorldModel",
+   "year": 2026,
+   "date": "2026-06-24",
+   "venue": "arXiv.org",
+   "external_ids": {
+    "DBLP": "journals/corr/abs-2606-26217",
+    "ArXiv": "2606.26217",
+    "DOI": "10.48550/arXiv.2606.26217",
+    "CorpusId": 289626955
+   },
+   "authors": [
+    "Yuntian Gao",
+    "Xiang Xu"
+   ],
+   "abstract": "Joint-Embedding Predictive Architectures (JEPAs), including recent LeWorldModel (LeWM), have become a promising foundation for reconstruction-free visual world models. For visual planning, however, LeWM evaluates candidate action sequences by repeatedly applying a local one-step latent transition model. This autoregressive rollout makes planning computationally expensive and exposes the predicted trajectory to accumulated latent errors as the horizon grows. We propose Fast LeWorldModel (Fast-LeWM), a fast latent world model that replaces repeated local rollout with action-prefix prediction. Given the current latent and a candidate action sequence, Fast-LeWM encodes its prefixes and predicts the future latents reached after executing those prefixes in parallel. By making action prefixes the basic prediction unit, Fast-LeWM directly models action effects accumulated to different extents over multiple horizons. This prefix-level supervision forces the model to learn how states continuously evolve under different action prefixes, rather than only fitting one-step state transitions. During planning, the predictor can use the prefix token from the encoded action sequence to evaluate the ",
+   "url": "https://www.semanticscholar.org/paper/3d45819ac7b5099976f582ac5f7c313e6a495a79",
+   "contexts": [
+    "LeWM trains an end-to-end JEPA world model using next-embedding prediction and SIGReg-style Gaussian regularization (Balestriero & LeCun, 2025; Maes et al., 2026); recent work further develops this regularization (Zhao et al., 2026; Thil et al., 2026; Wu et al., 2026)."
+   ],
+   "intents": [],
+   "is_influential": false
+  },
+  {
+   "source": "semantic_scholar",
+   "s2_id": "97c96b72f874f393588c4b3b3b6c627dc23faaf1",
+   "title": "ProteinJEPA: Latent prediction improves protein language model pretraining",
+   "year": 2026,
+   "date": "2026-05-08",
+   "venue": "",
+   "external_ids": {
+    "ArXiv": "2605.07554",
+    "CorpusId": 292267790
+   },
+   "authors": [
+    "Dan Ofer",
+    "Dafna Shahaf",
+    "M. Linial"
+   ],
+   "abstract": "Protein language models are trained primarily with masked language modeling (MLM), which predicts masked amino-acid identities. Joint-embedding predictive architectures (JEPA) instead predict latent representations, but have not been applied to proteins. ProteinJEPA supplements MLM with a cosine loss for predicting the half-depth hidden states of a teacher given the unmasked sequence. On 19 tasks, with ESM2 at 35M and 150M parameters and three pretraining seeds, MLM+JEPA outperforms compute-matched and step-matched MLM-only continued training in 78 and 76 of 114 comparisons (14 losses, 22 ties). The median compute-matched gain is $+0.0106$ on structure- and homology-sensitive tasks versus $+0.0041$ elsewhere, led by SCOPe-40 retrieval and remote homology with improvements of 6.1 percentage points in Recall@1 and 2.7 points in accuracy, respectively. Gains on these tasks increase with model size from 8M to 150M. Against the off-the-shelf checkpoint, MLM+JEPA wins 81 of 114 comparisons (median $+0.0068$) without improving MLM loss. In random initialization the gain is smaller and replicates inconsistently across seeds ($p{=}0.059$). The same recipe improves the causal ProGen3 model, ",
+   "url": "https://www.semanticscholar.org/paper/97c96b72f874f393588c4b3b3b6c627dc23faaf1",
+   "contexts": [
+    "The controlled study combines the EMA teacher (Baevski et al., 2022) with VISReg (variance–invariance–sketching regularization; Wu et al., 2026).",
+    "A latent loss can be satisfied by mapping every input to the same vector (collapse); JEPA methods prevent this with a slowly updated target encoder or a regularizer that keeps embeddings spread out, such as VICReg (Bardes et al., 2022), SIGReg (Balestriero & LeCun, 2025), and VISReg (Wu et al., 2026).",
+    "As a latent loss alone can be minimized by predicting the same vector for every input (collapse), VISReg prevents this by projecting the predicted embeddings onto random directions and penalizing each projection’s sliced-Wasserstein distance from a standard Gaussian, so predictions must stay spread out; SIGReg (sketched isotropic Gaussian regularization; Balestriero & LeCun, 2025; Maes et al., 2026) applies the same regularization with the Epps–Pulley statistic.",
+    "The EMA teacher and the VISReg regularizer were adopted together; neither was ablated on its own.",
+    "…loss can be satisfied by mapping every input to the same vector (collapse); JEPA methods prevent this with a slowly updated target encoder or a regularizer that keeps embeddings spread out, such as VICReg (Bardes et al., 2022), SIGReg (Balestriero & LeCun, 2025), and VISReg (Wu et al., 2026)."
+   ],
+   "intents": [],
+   "is_influential": true
+  }
+ ],
+ "openalex_citations": []
+}

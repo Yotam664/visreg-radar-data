@@ -1,0 +1,40 @@
+{
+ "generated_utc": "2026-10-07T18:30:55Z",
+ "finished_utc": "2026-10-07T18:32:55Z",
+ "reliable": true,
+ "since": "2026-06-01",
+ "visreg": {
+  "arxiv_id": "2606.02572",
+  "doi": "10.48550/arXiv.2606.02572",
+  "title": "VISReg: Variance-Invariance-Sketching Regularization for JEPA training",
+  "openalex_id": "W7163152452",
+  "openalex_cited_by_count": 0
+ },
+ "source_status": {
+  "semantic_scholar_citations": {
+   "ok": true,
+   "detail": "14 citing papers retrieved (full paging)"
+  },
+  "openalex_citations": {
+   "ok": true,
+   "detail": "0 retrieved of reported 0"
+  },
+  "arxiv_search": {
+   "ok": true,
+   "detail": "19/19 queries ok, 28 raw hits"
+  },
+  "huggingface_search": {
+   "ok": true,
+   "detail": "19/19 queries ok, 1613 raw hits"
+  },
+  "openalex_search": {
+   "ok": true,
+   "detail": "19/19 queries ok, 440 raw hits"
+  }
+ },
+ "counts": {
+  "s2_citations": 14,
+  "openalex_citations": 0,
+  "discovery_unique_papers": 1369
+ }
+}
