@@ -1,6 +1,65 @@
 {
- "generated_utc": "2026-10-07T18:36:06Z",
+ "generated_utc": "2026-10-08T21:51:12Z",
  "papers": [
+  {
+   "key": "2610.10299",
+   "title": "Shared Gaussianization: What Gaussian Regularizers Certify About Contrastive Learning, and What They Miss",
+   "date": "2026-10-07",
+   "authors": [
+    "Ruoyu Zhao",
+    "Yuting Chen",
+    "Jinheng Zhang",
+    "Zhehao Zou",
+    "Tong Che"
+   ],
+   "abstract": "What can a distribution-matching regularizer such as SIGReg in LeJEPA certify about contrastive learning? We study shared Gaussianization (SG), a characteristic-function Gaussianity test on the average of two normalized views, scaled by an independent $χ_d$ radius. Because disagreeing views shorten the average, one test detects both misalignment and non-uniformity. SG vanishes exactly at the aligned, uniform minimizers of population InfoNCE, and under equal marginals it bounds the InfoNCE excess by $4\\cdot 3^{3/4}β$ times the square root of the SG loss, plus a term linear in the loss. The squa",
+   "url": "http://arxiv.org/abs/2610.10299v1",
+   "sources": [
+    "arxiv"
+   ],
+   "matched_queries": [
+    "LeJEPA"
+   ]
+  },
+  {
+   "key": "2610.09457",
+   "title": "DSReg: Provably Recovering Individual World Latents without Reconstruction",
+   "date": "2026-10-07",
+   "authors": [
+    "Yujia Zheng",
+    "David Klindt",
+    "Randall Balestriero",
+    "Bernhard Schölkopf"
+   ],
+   "abstract": "Methods that recover individual latent variables of the world, from nonlinear ICA to dictionary learning and causal representation learning, anchor the latents to observations through reconstruction, auxiliary supervision, or distributional asymmetries such as non-Gaussianity. Methods without these anchors, including joint-embedding predictive architectures (JEPAs), identify the latent state only up to a linear transformation, so individual latents remain mixed. We close this gap: individual world latents can be provably recovered with no reconstruction, no decoder, and no labels. The key cond",
+   "url": "http://arxiv.org/abs/2610.09457v1",
+   "sources": [
+    "arxiv",
+    "huggingface"
+   ],
+   "matched_queries": [
+    "LeJEPA",
+    "JEPA collapse regularization",
+    "VICReg alternative covariance regularization",
+    "joint embedding predictive architecture regularization",
+    "latent world model JEPA stable training",
+    "Balestriero JEPA"
+   ]
+  },
+  {
+   "key": "2610.10515",
+   "title": "RoboJEPA: Scaling Robotic Latent World Models",
+   "date": "2026-10-06",
+   "authors": null,
+   "abstract": "",
+   "url": "https://huggingface.co/papers/2610.10515",
+   "sources": [
+    "huggingface"
+   ],
+   "matched_queries": [
+    "latent world model JEPA stable training"
+   ]
+  },
   {
    "key": "2610.06226",
    "title": "LeAVJEPA: A Minimalist Architecture for Audio-Visual Self-Supervised Learning",
@@ -49,6 +108,20 @@
    ]
   },
   {
+   "key": "2610.09048",
+   "title": "Towards Financial World Modeling",
+   "date": "2026-10-05",
+   "authors": null,
+   "abstract": "",
+   "url": "https://huggingface.co/papers/2610.09048",
+   "sources": [
+    "huggingface"
+   ],
+   "matched_queries": [
+    "Balestriero JEPA"
+   ]
+  },
+  {
    "key": "2610.06805",
    "title": "H-JEPA: End-to-End Learning of Hierarchical World Models for Visual Planning",
    "date": "2026-10-04",
@@ -78,6 +151,45 @@
    ]
   },
   {
+   "key": "https://openalex.org/W7215122683",
+   "title": "RD-LIVO: Degeneracy-aware LiDAR–visual–inertial odometrywith adaptive observation covariance",
+   "date": "2026-10-01",
+   "authors": [
+    "Yonghong Zhang",
+    "Xin Chen",
+    "Tiantian Dong",
+    "Haixiao Cao",
+    "Zheng Fang",
+    "Yu Yuan"
+   ],
+   "abstract": "",
+   "url": "https://doi.org/10.1088/1361-6501/aeaf0b",
+   "sources": [
+    "openalex"
+   ],
+   "matched_queries": [
+    "VISReg"
+   ]
+  },
+  {
+   "key": "https://openalex.org/W4225909781",
+   "title": "Gaussian and non-Gaussian universality of data augmentation",
+   "date": "2026-10-01",
+   "authors": [
+    "Kevin Han Huang",
+    "Peter Orbanz",
+    "Morgane Austern"
+   ],
+   "abstract": "",
+   "url": "https://doi.org/10.1214/26-aos2642",
+   "sources": [
+    "openalex"
+   ],
+   "matched_queries": [
+    "sketched isotropic Gaussian regularizer"
+   ]
+  },
+  {
    "key": "2610.02188",
    "title": "DMAD: Distribution Matching as Adversarial Distillation for Fast Visual Generation",
    "date": "2026-09-30",
@@ -104,6 +216,27 @@
    ],
    "matched_queries": [
     "joint embedding predictive architecture regularization"
+   ]
+  },
+  {
+   "key": "https://openalex.org/W7216077629",
+   "title": "CF-JEPA: Improving Robustness of JEPA World Models via Controllability Factorization",
+   "date": "2026-09-30",
+   "authors": [
+    "Morgan Byrd",
+    "Robert Wright",
+    "Sehoon Ha"
+   ],
+   "abstract": "",
+   "url": "https://arxiv.org/abs/2610.00727",
+   "sources": [
+    "openalex"
+   ],
+   "matched_queries": [
+    "JEPA collapse regularization",
+    "JEPA anti-collapse",
+    "latent world model JEPA stable training",
+    "Balestriero JEPA"
    ]
   },
   {
@@ -343,6 +476,20 @@
    "matched_queries": [
     "sketched isotropic Gaussian regularizer",
     "isotropic Gaussian embeddings self-supervised heuristics-free"
+   ]
+  },
+  {
+   "key": "2609.37250",
+   "title": "V-JEPA Policy: Building Effective World-Action Models on Predictive Visual Latents",
+   "date": "2026-09-28",
+   "authors": null,
+   "abstract": "",
+   "url": "https://huggingface.co/papers/2609.37250",
+   "sources": [
+    "huggingface"
+   ],
+   "matched_queries": [
+    "latent world model JEPA stable training"
    ]
   },
   {
@@ -711,6 +858,27 @@
    ]
   },
   {
+   "key": "https://openalex.org/W7214015369",
+   "title": "Automated Airway Mucus Plug Detection on Chest CT for Clinical Outcomes in COPD Patients",
+   "date": "2026-09-23",
+   "authors": [
+    "Zhe Chen",
+    "Xiaofan Liu",
+    "Zichen Wang",
+    "Rob M. Ewing",
+    "Zehor Belkhatir",
+    "Yihua Wang"
+   ],
+   "abstract": "",
+   "url": "https://doi.org/10.21203/rs.3.rs-10938506/v1",
+   "sources": [
+    "openalex"
+   ],
+   "matched_queries": [
+    "SIGReg LeJEPA"
+   ]
+  },
+  {
    "key": "https://openalex.org/W7214316575",
    "title": "BiMamba2 Masked Discrete-Unit Prediction for Multilingual Speech Representation for Unsupervised Speech in the Wild Challenge",
    "date": "2026-09-23",
@@ -962,6 +1130,25 @@
    ]
   },
   {
+   "key": "https://openalex.org/W7214709537",
+   "title": "Does Joint-Embedding Predictive Architecture Pretraining Help Time Series Forecasting?",
+   "date": "2026-09-16",
+   "authors": [
+    "Yutong Feng",
+    "Bowen Liao",
+    "See Kiong Ng",
+    "Yuxuan Liang"
+   ],
+   "abstract": "",
+   "url": "https://arxiv.org/abs/2609.31680",
+   "sources": [
+    "openalex"
+   ],
+   "matched_queries": [
+    "joint embedding predictive architecture regularization"
+   ]
+  },
+  {
    "key": "https://openalex.org/W7213406753",
    "title": "Distributed JEPA: A Self-Supervised Framework for Energy Forecasting",
    "date": "2026-09-15",
@@ -1065,35 +1252,20 @@
    ]
   },
   {
-   "key": "https://openalex.org/W7212044155",
-   "title": "Data and Code for: Protecting ecological processes, not just places, improves freshwater integrity",
+   "key": "https://openalex.org/W7212108071",
+   "title": "Why Learning Rediscovers the Closed-Form Diagonal Regularizer",
    "date": "2026-09-09",
    "authors": [
-    "Christian Schürings"
+    "Jeahn Han",
+    "Pyojin Kim"
    ],
    "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.22679705",
+   "url": "https://arxiv.org/abs/2609.09656",
    "sources": [
     "openalex"
    ],
    "matched_queries": [
-    "VISReg"
-   ]
-  },
-  {
-   "key": "https://openalex.org/W7152957252",
-   "title": "Data and Code for: Protecting ecological processes, not just places, improves freshwater integrity",
-   "date": "2026-09-09",
-   "authors": [
-    "Christian Schürings"
-   ],
-   "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.19489941",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "VISReg"
+    "sketched isotropic Gaussian regularizer"
    ]
   },
   {
@@ -1744,7 +1916,26 @@
    ]
   },
   {
-   "key": "https://openalex.org/W7204599757",
+   "key": "https://openalex.org/W7204921587",
+   "title": "Beyond Representation Learning: A Systematic Study of Joint-Embedding Predictive Generation for 3D Brain MRI",
+   "date": "2026-08-28",
+   "authors": [
+    "Meng Zhou",
+    "Wenhao You",
+    "Yuxing Chen",
+    "Yueying Tian"
+   ],
+   "abstract": "",
+   "url": "https://arxiv.org/abs/2608.28787",
+   "sources": [
+    "openalex"
+   ],
+   "matched_queries": [
+    "joint embedding predictive architecture regularization"
+   ]
+  },
+  {
+   "key": "https://openalex.org/W7204601780",
    "title": "Scalable partial information decomposition for symptom networks via supervised embeddings",
    "date": "2026-08-28",
    "authors": [
@@ -2368,24 +2559,6 @@
    ]
   },
   {
-   "key": "https://openalex.org/W7203660333",
-   "title": "Quantification and Decomposition of Uncertainty Using Sliced-Normal Distribution: With Applications to NASA Data",
-   "date": "2026-08-14",
-   "authors": [
-    "Arindam Roychowdhury",
-    "Luis G. Crespo",
-    "Henry Lam"
-   ],
-   "abstract": "",
-   "url": "https://arxiv.org/abs/2608.14878",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "sliced distribution matching representation learning"
-   ]
-  },
-  {
    "key": "https://openalex.org/W7203624184",
    "title": "Flexible covariance structures on metric graphs",
    "date": "2026-08-14",
@@ -2547,7 +2720,8 @@
     "openalex"
    ],
    "matched_queries": [
-    "sketched isotropic Gaussian regularizer"
+    "sketched isotropic Gaussian regularizer",
+    "joint embedding predictive architecture regularization"
    ]
   },
   {
@@ -2594,6 +2768,24 @@
    ]
   },
   {
+   "key": "https://openalex.org/W7202032788",
+   "title": "ProtJEPA: A Multimodal Joint-Embedding Predictive Architecture for Protein Biological World Modeling with Multi-Teacher Modality-Attentive Fusion",
+   "date": "2026-08-09",
+   "authors": [
+    "Vaibhava Lakshmi Ravideshik",
+    "김진하",
+    "Manolis Kellis"
+   ],
+   "abstract": "",
+   "url": "https://doi.org/10.64898/2026.08.03.742606",
+   "sources": [
+    "openalex"
+   ],
+   "matched_queries": [
+    "joint embedding predictive architecture regularization"
+   ]
+  },
+  {
    "key": "https://openalex.org/W7202178455",
    "title": "Three Necessary Principles for Self-Supervised Visual Representation Learning",
    "date": "2026-08-08",
@@ -2611,6 +2803,7 @@
     "sliced Wasserstein regularization self-supervised",
     "VICReg alternative covariance regularization",
     "representation collapse self-supervised learning regularizer",
+    "sliced distribution matching representation learning",
     "isotropic Gaussian embeddings self-supervised heuristics-free"
    ]
   },
@@ -2750,27 +2943,6 @@
    ]
   },
   {
-   "key": "https://openalex.org/W7201875857",
-   "title": "PhyLatent: Learning Dynamics-Relevant Representations for JEPA World Models",
-   "date": "2026-08-06",
-   "authors": [
-    "Xi Zeng",
-    "Haojie Ren",
-    "Ziying Song",
-    "Yuanbo Nie",
-    "Ross Drummond"
-   ],
-   "abstract": "",
-   "url": "https://arxiv.org/abs/2608.05720",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "latent world model JEPA stable training",
-    "Balestriero JEPA"
-   ]
-  },
-  {
    "key": "2608.06062",
    "title": "Bar-JEPA: Extracting Values from Bar Chart with Joint-Embedding Predictive Architecture",
    "date": "2026-08-05",
@@ -2797,6 +2969,25 @@
    ],
    "matched_queries": [
     "latent world model JEPA stable training"
+   ]
+  },
+  {
+   "key": "https://openalex.org/W7196960866",
+   "title": "Helping Music Co-Creation Agents 'Listen' Well: Hierarchical Self-Supervised World Models for Understanding and Generation",
+   "date": "2026-08-05",
+   "authors": [
+    "Scott H. Hawley"
+   ],
+   "abstract": "",
+   "url": "https://arxiv.org/abs/2608.04378",
+   "sources": [
+    "openalex"
+   ],
+   "matched_queries": [
+    "VISReg",
+    "distribution matching embedding regularizer self-supervised",
+    "isotropic Gaussian embeddings self-supervised heuristics-free",
+    "Haiyu Wu Balestriero"
    ]
   },
   {
@@ -2839,24 +3030,6 @@
    "matched_queries": [
     "VICReg alternative covariance regularization",
     "isotropic Gaussian embeddings self-supervised heuristics-free"
-   ]
-  },
-  {
-   "key": "https://openalex.org/W7196960866",
-   "title": "Helping Music Co-Creation Agents 'Listen' Well: Hierarchical Self-Supervised World Models for Understanding and Generation",
-   "date": "2026-08-05",
-   "authors": [
-    "Scott H. Hawley"
-   ],
-   "abstract": "",
-   "url": "https://arxiv.org/abs/2608.04378",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "distribution matching embedding regularizer self-supervised",
-    "isotropic Gaussian embeddings self-supervised heuristics-free",
-    "Haiyu Wu Balestriero"
    ]
   },
   {
@@ -2962,6 +3135,22 @@
    ]
   },
   {
+   "key": "https://openalex.org/W7172292277",
+   "title": "Sedenion Algebra as a Constrained Bilinear Operator Framework for GPS-Denied Inertial Navigation",
+   "date": "2026-08-03",
+   "authors": [
+    "Dionisio Chiuratto Agourakis"
+   ],
+   "abstract": "",
+   "url": "https://doi.org/10.5281/zenodo.21772200",
+   "sources": [
+    "openalex"
+   ],
+   "matched_queries": [
+    "LeJEPA"
+   ]
+  },
+  {
    "key": "https://openalex.org/W7172324906",
    "title": "Sedenion Algebra as a Constrained Bilinear Operator Framework for GPS-Denied Inertial Navigation",
    "date": "2026-08-03",
@@ -3047,6 +3236,22 @@
    ]
   },
   {
+   "key": "https://openalex.org/W7171970340",
+   "title": "Seasonal Dynamics of Woodland Insectivorous Mixed-Species Flocks in Urban Green Areas of Buenos Aires City, Argentina",
+   "date": "2026-07-31",
+   "authors": [
+    "Lucas M. Leveau"
+   ],
+   "abstract": "",
+   "url": "https://doi.org/10.3390/birds7030046",
+   "sources": [
+    "openalex"
+   ],
+   "matched_queries": [
+    "VISReg"
+   ]
+  },
+  {
    "key": "https://openalex.org/W7204020922",
    "title": "Self-Supervised Audio-Visual Representation Learning with LeJEPA",
    "date": "2026-07-31",
@@ -3093,6 +3298,7 @@
    "matched_queries": [
     "variance invariance sketching regularization",
     "sliced Wasserstein regularization self-supervised",
+    "sketched isotropic Gaussian regularizer",
     "VICReg alternative covariance regularization",
     "distribution matching embedding regularizer self-supervised",
     "dimensional collapse variance covariance regularization",
@@ -3282,7 +3488,6 @@
     "openalex"
    ],
    "matched_queries": [
-    "JEPA anti-collapse",
     "latent world model JEPA stable training"
    ]
   },
@@ -3537,6 +3742,24 @@
    ]
   },
   {
+   "key": "https://openalex.org/W7170089542",
+   "title": "Multimodal EEG World Model: Self-Supervised Latent Transition Learning for Wearable EEG Seizure Detection",
+   "date": "2026-07-22",
+   "authors": [
+    "Ziyuan Yin",
+    "Hongyi Zhu"
+   ],
+   "abstract": "",
+   "url": "https://doi.org/10.64898/2026.07.20.26358450",
+   "sources": [
+    "openalex"
+   ],
+   "matched_queries": [
+    "sketched isotropic Gaussian regularizer",
+    "representation collapse self-supervised learning regularizer"
+   ]
+  },
+  {
    "key": "https://openalex.org/W7170189373",
    "title": "JEPA-CFM: A Joint Embedding Predictive Architecture-based Channel Foundation Model for Robust Fluid Antenna Systems",
    "date": "2026-07-22",
@@ -3556,23 +3779,6 @@
    ],
    "matched_queries": [
     "joint embedding predictive architecture regularization"
-   ]
-  },
-  {
-   "key": "https://openalex.org/W7170089542",
-   "title": "Multimodal EEG World Model: Self-Supervised Latent Transition Learning for Wearable EEG Seizure Detection",
-   "date": "2026-07-22",
-   "authors": [
-    "Ziyuan Yin",
-    "Hongyi Zhu"
-   ],
-   "abstract": "",
-   "url": "https://doi.org/10.64898/2026.07.20.26358450",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "representation collapse self-supervised learning regularizer"
    ]
   },
   {
@@ -3611,6 +3817,26 @@
    ],
    "matched_queries": [
     "sliced distribution matching representation learning"
+   ]
+  },
+  {
+   "key": "https://openalex.org/W7170083937",
+   "title": "Scalable and Efficient Joint Spiking Embedding Predictive Architecture for Large-Scale Dynamic Graphs",
+   "date": "2026-07-20",
+   "authors": [
+    "Huizhe Zhang",
+    "Yuchang Zhu",
+    "Huazhen Zhong",
+    "Liang Chen",
+    "Z H Zheng"
+   ],
+   "abstract": "",
+   "url": "https://arxiv.org/abs/2607.18412",
+   "sources": [
+    "openalex"
+   ],
+   "matched_queries": [
+    "joint embedding predictive architecture regularization"
    ]
   },
   {
@@ -3773,6 +3999,7 @@
     "openalex"
    ],
    "matched_queries": [
+    "SIGReg LeJEPA",
     "sliced distribution matching representation learning"
    ]
   },
@@ -3814,6 +4041,25 @@
    ]
   },
   {
+   "key": "https://openalex.org/W7169057893",
+   "title": "Kepler-Encoder-v0.1: Towards a Multimodal Embedding Model for Robots",
+   "date": "2026-07-15",
+   "authors": [
+    "Ishneet Sukhvinder Singh",
+    "Dhanoosh Pooranakumaran",
+    "Alex Nguyen",
+    "Jia Qi Yip"
+   ],
+   "abstract": "",
+   "url": "https://arxiv.org/abs/2607.13522",
+   "sources": [
+    "openalex"
+   ],
+   "matched_queries": [
+    "SIGReg LeJEPA"
+   ]
+  },
+  {
    "key": "2607.13609",
    "title": "Gauge-Invariant, Parameter-Insensitive Regularization for Potential Recovery from Flow on Directed Graphs",
    "date": "2026-07-14",
@@ -3837,38 +4083,6 @@
    "url": "https://huggingface.co/papers/2607.01455",
    "sources": [
     "huggingface"
-   ],
-   "matched_queries": [
-    "joint embedding predictive architecture regularization"
-   ]
-  },
-  {
-   "key": "https://openalex.org/W7163357490",
-   "title": "The Forced Geometry of Predictive Representations: Joint-Embedding and Self-Supervised Architectures through Information Geometry",
-   "date": "2026-07-14",
-   "authors": [
-    "Ryan Henderson"
-   ],
-   "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.20519070",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "joint embedding predictive architecture regularization"
-   ]
-  },
-  {
-   "key": "https://openalex.org/W7168295759",
-   "title": "The Forced Geometry of Predictive Representations: Joint-Embedding and Self-Supervised Architectures through Information Geometry",
-   "date": "2026-07-14",
-   "authors": [
-    "Ryan Henderson"
-   ],
-   "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.21365267",
-   "sources": [
-    "openalex"
    ],
    "matched_queries": [
     "joint embedding predictive architecture regularization"
@@ -4207,26 +4421,6 @@
    ],
    "matched_queries": [
     "VICReg alternative covariance regularization"
-   ]
-  },
-  {
-   "key": "https://openalex.org/W7204439685",
-   "title": "Code and data for \"Cities alter the latitudinal diversity gradient of birds in North America\"",
-   "date": "2026-07-03",
-   "authors": [
-    "Yuyang Xie",
-    "Xin Chen",
-    "Joseph Robert Burger",
-    "Allen H. Hurlbert",
-    "Xiao Feng"
-   ],
-   "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.21172733",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "VISReg"
    ]
   },
   {
@@ -4830,14 +5024,14 @@
    ]
   },
   {
-   "key": "https://openalex.org/W7165480301",
-   "title": "End-to-End Multi-Asset Portfolio Allocation via Self-Clustering Time-Series Transformers: Overcoming Covariance Estimation and Rotational Invariance Limits",
+   "key": "https://openalex.org/W7165479424",
+   "title": "End-to-End Multi-Asset Portfolio Allocation via Self-Clustering Time-Series Transformers: Addressing Covariance Estimation and Rotational Invariance Limits",
    "date": "2026-06-21",
    "authors": [
     "Supriadi Supriadi"
    ],
    "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.20782591",
+   "url": "https://doi.org/10.5281/zenodo.20782590",
    "sources": [
     "openalex"
    ],
@@ -4951,22 +5145,6 @@
    ]
   },
   {
-   "key": "https://openalex.org/W7164989482",
-   "title": "The Forced Geometry of Predictive Representations: Joint-Embedding and Self-Supervised Architectures through Information Geometry",
-   "date": "2026-06-17",
-   "authors": [
-    "Ryan Henderson"
-   ],
-   "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.20729356",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "joint embedding predictive architecture regularization"
-   ]
-  },
-  {
    "key": "2606.17603",
    "title": "Expanding SPHERE-JEPA: A Family of Statistical Regularizers for the Hypersphere",
    "date": "2026-06-16",
@@ -5006,7 +5184,8 @@
    ],
    "matched_queries": [
     "JEPA collapse regularization",
-    "sliced Wasserstein regularization self-supervised"
+    "sliced Wasserstein regularization self-supervised",
+    "SIGReg LeJEPA"
    ]
   },
   {
@@ -5019,74 +5198,6 @@
    ],
    "abstract": "",
    "url": "https://doi.org/10.5281/zenodo.20711952",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "SIGReg LeJEPA"
-   ]
-  },
-  {
-   "key": "https://openalex.org/W7164972489",
-   "title": "Adapter Merging on JEPA Backbones: Interference Lives in the Head, and a Rate-Distortion-Optimal Encoder Recovers It",
-   "date": "2026-06-16",
-   "authors": [
-    "Sankalp Pathak",
-    "Sanjay Garg"
-   ],
-   "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.20711953",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "SIGReg LeJEPA"
-   ]
-  },
-  {
-   "key": "https://openalex.org/W7164901235",
-   "title": "Adapter Merging on JEPA Backbones: Interference Lives in the Head, and a Rate-Distortion-Optimal Encoder Recovers It",
-   "date": "2026-06-16",
-   "authors": [
-    "Sankalp Pathak",
-    "Sanjay Garg"
-   ],
-   "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.20713332",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "SIGReg LeJEPA"
-   ]
-  },
-  {
-   "key": "https://openalex.org/W7164888371",
-   "title": "Adapter Merging on JEPA Backbones: Interference Lives in the Head, and a Rate-Distortion-Optimal Encoder Recovers It",
-   "date": "2026-06-16",
-   "authors": [
-    "Sankalp Pathak",
-    "Sanjay Garg"
-   ],
-   "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.20712124",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "SIGReg LeJEPA"
-   ]
-  },
-  {
-   "key": "https://openalex.org/W7164892800",
-   "title": "Adapter Merging on JEPA Backbones: Interference Lives in the Head, and a Rate-Distortion-Optimal Encoder Recovers It",
-   "date": "2026-06-16",
-   "authors": [
-    "Sankalp Pathak",
-    "Sanjay Garg"
-   ],
-   "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.20713190",
    "sources": [
     "openalex"
    ],
@@ -5227,23 +5338,6 @@
    ]
   },
   {
-   "key": "https://openalex.org/W7164541461",
-   "title": "EPM-JEPA: Operator-Side Experience Modulation in JEPA-Family World Models",
-   "date": "2026-06-11",
-   "authors": [
-    "Vedant Pandya"
-   ],
-   "abstract": "",
-   "url": "https://arxiv.org/abs/2606.12979",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "JEPA collapse regularization",
-    "latent world model JEPA stable training"
-   ]
-  },
-  {
    "key": "https://openalex.org/W7164567115",
    "title": "Masked and Predictive Self-Supervised Foundation Models for 3D Brain MRI",
    "date": "2026-06-11",
@@ -5263,6 +5357,22 @@
    ]
   },
   {
+   "key": "https://openalex.org/W7164541461",
+   "title": "EPM-JEPA: Operator-Side Experience Modulation in JEPA-Family World Models",
+   "date": "2026-06-11",
+   "authors": [
+    "Vedant Pandya"
+   ],
+   "abstract": "",
+   "url": "https://arxiv.org/abs/2606.12979",
+   "sources": [
+    "openalex"
+   ],
+   "matched_queries": [
+    "latent world model JEPA stable training"
+   ]
+  },
+  {
    "key": "2606.12979",
    "title": "EPM-JEPA: Operator-Side Experience Modulation in JEPA-Family World Models",
    "date": "2026-06-10",
@@ -5276,38 +5386,6 @@
     "JEPA collapse regularization",
     "JEPA anti-collapse",
     "latent world model JEPA stable training"
-   ]
-  },
-  {
-   "key": "https://openalex.org/W7163012383",
-   "title": "JEPA-Chess: Action-Conditioned Joint Embedding Predictive Architectures for Discrete Logical State Tracking",
-   "date": "2026-06-10",
-   "authors": [
-    "Yumnam Harryson Singh"
-   ],
-   "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.20484951",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "joint embedding predictive architecture regularization"
-   ]
-  },
-  {
-   "key": "https://openalex.org/W7164163434",
-   "title": "JEPA-Chess: Action-Conditioned Joint Embedding Predictive Architectures for Discrete Logical State Tracking",
-   "date": "2026-06-10",
-   "authors": [
-    "Yumnam Harryson Singh"
-   ],
-   "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.20621351",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "joint embedding predictive architecture regularization"
    ]
   },
   {
@@ -5356,54 +5434,6 @@
    ],
    "matched_queries": [
     "variance invariance sketching regularization"
-   ]
-  },
-  {
-   "key": "https://openalex.org/W7164049696",
-   "title": "The Lár Training Loop: Routing Flags as Gradient Signals — Self-Curating Curriculum, LoRA Adapter Integration, Sketched Isotropic Gaussian Regularization, and Annotation-Free Continual Learning",
-   "date": "2026-06-09",
-   "authors": [
-    "Aadithya Vishnu Sajeev"
-   ],
-   "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.20602794",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "sketched isotropic Gaussian regularizer"
-   ]
-  },
-  {
-   "key": "https://openalex.org/W7164045950",
-   "title": "The Lár Training Loop: Routing Flags as Gradient Signals — Self-Curating Curriculum, LoRA Adapter Integration, Sketched Isotropic Gaussian Regularization, and Annotation-Free Continual Learning",
-   "date": "2026-06-09",
-   "authors": [
-    "Aadithya Vishnu Sajeev"
-   ],
-   "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.20613758",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "sketched isotropic Gaussian regularizer"
-   ]
-  },
-  {
-   "key": "https://openalex.org/W7162533393",
-   "title": "The Lár Training Loop: Routing Flags as Gradient Signals — Self-Curating Curriculum, LoRA Adapter Integration, Sketched Isotropic Gaussian Regularization, and Annotation-Free Continual Learning",
-   "date": "2026-06-09",
-   "authors": [
-    "Aadithya Vishnu Sajeev"
-   ],
-   "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.20419181",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "sketched isotropic Gaussian regularizer"
    ]
   },
   {
@@ -5563,22 +5593,6 @@
    ]
   },
   {
-   "key": "https://openalex.org/W7163826562",
-   "title": "The Lár Training Loop: Routing Flags as Gradient Signals: Self-Curating Curriculum, LoRA Adapter Integration, Sketched Isotropic Gaussian Regularization, and Annotation-Free Continual Learning",
-   "date": "2026-06-07",
-   "authors": [
-    "Aadithya Vishnu Sajeev"
-   ],
-   "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.20581128",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "sketched isotropic Gaussian regularizer"
-   ]
-  },
-  {
    "key": "2605.27786",
    "title": "Locality-Aware Redundancy Pruning for LLM Depth Compression",
    "date": "2026-06-06",
@@ -5662,14 +5676,14 @@
    ]
   },
   {
-   "key": "https://openalex.org/W7163399719",
+   "key": "https://openalex.org/W7163357490",
    "title": "The Forced Geometry of Predictive Representations: Joint-Embedding and Self-Supervised Architectures through Information Geometry",
    "date": "2026-06-03",
    "authors": [
     "Ryan Henderson"
    ],
    "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.20519071",
+   "url": "https://doi.org/10.5281/zenodo.20519070",
    "sources": [
     "openalex"
    ],
@@ -5702,8 +5716,7 @@
     "huggingface"
    ],
    "matched_queries": [
-    "JEPA collapse regularization",
-    "joint embedding predictive architecture regularization"
+    "JEPA collapse regularization"
    ]
   },
   {
@@ -5720,22 +5733,6 @@
     "sketched isotropic Gaussian regularizer",
     "Cramer-Wold sketch embedding Gaussian",
     "isotropic Gaussian embeddings self-supervised heuristics-free"
-   ]
-  },
-  {
-   "key": "https://openalex.org/W7204445627",
-   "title": "GNN-LeJEPA: Isotropy-Regularized Graph Embeddings for Mixed-Level Regionalization",
-   "date": "2026-06-02",
-   "authors": [
-    "Author"
-   ],
-   "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.20517340",
-   "sources": [
-    "openalex"
-   ],
-   "matched_queries": [
-    "LeJEPA"
    ]
   },
   {
@@ -5829,14 +5826,14 @@
    ]
   },
   {
-   "key": "https://openalex.org/W7163035378",
+   "key": "https://openalex.org/W7163012383",
    "title": "JEPA-Chess: Action-Conditioned Joint Embedding Predictive Architectures for Discrete Logical State Tracking",
    "date": "2026-06-01",
    "authors": [
     "Yumnam Harryson Singh"
    ],
    "abstract": "",
-   "url": "https://doi.org/10.5281/zenodo.20484952",
+   "url": "https://doi.org/10.5281/zenodo.20484951",
    "sources": [
     "openalex"
    ],
