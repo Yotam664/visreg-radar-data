@@ -1,258 +1,268 @@
 #!/usr/bin/env python3
-"""VISReg radar data fetcher (stdlib only).
-
-Runs inside GitHub Actions. Collects (a) every paper that cites VISReg from
-Semantic Scholar and OpenAlex, and (b) candidate related papers from arXiv,
-Hugging Face papers and OpenAlex text search. Writes data/latest.json.
-It never decides what is "new" - the Claude agent does that against its ledger.
-Every source reports ok / failed honestly so a failure is never read as "nothing found".
 """
-import json, os, sys, time, datetime, urllib.request, urllib.parse, urllib.error
-import xml.etree.ElementTree as ET
+fetch_github.py - GitHub watcher for the VISReg Adversarial Radar.
 
-ARXIV_ID = "2606.02572"
-DOI = "10.48550/arXiv.2606.02572"
-TITLE = "VISReg: Variance-Invariance-Sketching Regularization for JEPA training"
+Runs inside the GitHub Action (next to fetch.py) and writes data/github.json.
+It looks for:
+  1. new forks of HaiyuWu/visreg (and their latest commit messages),
+  2. new repositories matching adversarial / VISReg-family searches,
+  3. recent issues and pull requests on HaiyuWu/visreg,
+  4. (best effort) code-search hits for "VISReg" + adversarial terms.
+Every item is flagged with adv_keyword = True when it mentions adversarial-type words.
+
+Design rules:
+  - NEVER fail the workflow: all errors are caught and written to source_status.
+  - Standard library only (urllib), so no pip install is needed.
+  - Uses GITHUB_TOKEN from the environment (provided by Actions) for rate limits.
+"""
+import json
+import os
+import re
+import sys
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+from datetime import datetime, timezone
+
+OWNER_REPO = "HaiyuWu/visreg"
 SINCE = "2026-06-01"
-MAILTO = os.environ.get("CONTACT_EMAIL", "visreg-radar@users.noreply.github.com")
-S2_KEY = os.environ.get("S2_API_KEY", "").strip()
-UA = f"visreg-radar/1.0 (mailto:{MAILTO})"
+OUT_PATH = os.path.join("data", "github.json")
+API = "https://api.github.com"
+TOKEN = os.environ.get("GITHUB_TOKEN", "")
 
-# Discovery queries (Task A). Each is run on arXiv, Hugging Face and OpenAlex.
-QUERIES = [
-    "VISReg", "variance invariance sketching regularization",
-    "JEPA collapse regularization", "JEPA anti-collapse",
-    "sliced Wasserstein regularization self-supervised",
-    "sketched isotropic Gaussian regularizer", "SIGReg LeJEPA",
-    "VICReg alternative covariance regularization", "distribution matching embedding regularizer self-supervised",
-    "joint embedding predictive architecture regularization", "representation collapse self-supervised learning regularizer",
-    "Cramer-Wold sketch embedding Gaussian", "sliced distribution matching representation learning",
-    "latent world model JEPA stable training", "isotropic Gaussian embeddings self-supervised heuristics-free",
-    "dimensional collapse variance covariance regularization",
-    "Haiyu Wu Balestriero", "Balestriero JEPA", "LeJEPA",
+ADV_RE = re.compile(
+    r"adversar|robust|attack|perturb|defen[cs]e|certif|pgd|fgsm|autoattack|min-?max",
+    re.IGNORECASE,
+)
+
+REPO_QUERIES = [
+    "VISReg adversarial",
+    "VISReg robustness",
+    "VISReg attack",
+    "adversarial JEPA",
+    "adversarial training JEPA",
+    "adversarial robustness JEPA self-supervised",
+    "SIGReg adversarial",
+    "LeJEPA adversarial",
+    "sliced Wasserstein regularization adversarial self-supervised",
+    "isotropic Gaussian embedding adversarial robustness",
+    "VISReg",
 ]
 
-status = {}          # source -> {"ok": bool, "detail": str}
-def mark(name, ok, detail=""):
-    status[name] = {"ok": bool(ok), "detail": detail}
+CODE_QUERIES = [
+    "VISReg adversarial",
+    "visreg pgd",
+    "visreg attack",
+]
 
-def get(url, headers=None, tries=6, base_sleep=5):
-    h = {"User-Agent": UA, "Accept": "application/json"}
-    if headers: h.update(headers)
-    last = None
-    for i in range(tries):
-        try:
-            req = urllib.request.Request(url, headers=h)
-            with urllib.request.urlopen(req, timeout=60) as r:
-                return r.read().decode("utf-8", "replace")
-        except urllib.error.HTTPError as e:
-            last = f"HTTP {e.code}"
-            if e.code in (429, 500, 502, 503, 504):
-                ra = e.headers.get("Retry-After")
-                time.sleep(min(float(ra), 90) if ra and ra.replace('.', '', 1).isdigit() else base_sleep * (2 ** i))
-                continue
-            raise RuntimeError(last + " " + url)
-        except Exception as e:
-            last = repr(e)
-            time.sleep(base_sleep * (i + 1))
-    raise RuntimeError(f"gave up after {tries} tries: {last} {url}")
 
-def jget(url, headers=None):
-    return json.loads(get(url, headers))
+def now_utc():
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-# ---------------------------------------------------------------- Semantic Scholar
-def s2_citations():
-    hdr = {"x-api-key": S2_KEY} if S2_KEY else {}
-    fields = ("title,year,publicationDate,venue,externalIds,authors,abstract,url,"
-              "contexts,intents,isInfluential,publicationVenue")
-    out, offset, total_seen = [], 0, 0
-    base = f"https://api.semanticscholar.org/graph/v1/paper/arXiv:{ARXIV_ID}/citations"
-    while True:
-        u = f"{base}?fields={urllib.parse.quote(fields)}&limit=100&offset={offset}"
-        d = jget(u, hdr)
-        for row in d.get("data", []):
-            p = row.get("citingPaper") or {}
-            out.append({
-                "source": "semantic_scholar", "s2_id": p.get("paperId"),
-                "title": p.get("title"), "year": p.get("year"), "date": p.get("publicationDate"),
-                "venue": p.get("venue"), "external_ids": p.get("externalIds"),
-                "authors": [a.get("name") for a in (p.get("authors") or [])][:12],
-                "abstract": (p.get("abstract") or "")[:1200], "url": p.get("url"),
-                "contexts": row.get("contexts") or [], "intents": row.get("intents") or [],
-                "is_influential": row.get("isInfluential"),
-            })
-        time.sleep(1.2 if S2_KEY else 4)
-        if d.get("next") is None:
-            break
-        offset = d["next"]
-    return out
 
-# ---------------------------------------------------------------- OpenAlex
-def oa(path, **params):
-    params["mailto"] = MAILTO
-    return jget("https://api.openalex.org/" + path + "?" + urllib.parse.urlencode(params))
-
-def oa_work(w):
-    ids = w.get("ids") or {}
-    loc = w.get("primary_location") or {}
-    src = (loc.get("source") or {}).get("display_name")
-    return {
-        "source": "openalex", "openalex_id": w.get("id"), "doi": w.get("doi"),
-        "title": w.get("title"), "date": w.get("publication_date"), "year": w.get("publication_year"),
-        "venue": src, "type": w.get("type"),
-        "external_ids": {"DOI": w.get("doi"), "arXiv": ids.get("arxiv") if isinstance(ids, dict) else None},
-        "authors": [(a.get("author") or {}).get("display_name") for a in (w.get("authorships") or [])][:12],
-        "url": (loc.get("landing_page_url") or w.get("doi") or w.get("id")),
+def api_get(path, params=None):
+    """GET from the GitHub API; returns parsed JSON. Raises on HTTP errors."""
+    url = API + path
+    if params:
+        url += "?" + urllib.parse.urlencode(params)
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+        "User-Agent": "visreg-radar-bot",
     }
+    if TOKEN:
+        headers["Authorization"] = "Bearer " + TOKEN
+    req = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(req, timeout=40) as resp:
+        return json.loads(resp.read().decode("utf-8"))
 
-def oa_visreg_id():
-    for key in ("doi:10.48550/arxiv.2606.02572", "doi:" + DOI.lower()):
-        try:
-            d = jget(f"https://api.openalex.org/works/{key}?mailto={urllib.parse.quote(MAILTO)}")
-            if d.get("id"): return d["id"].rsplit("/", 1)[-1], d
-        except Exception:
-            pass
-    d = oa("works", search=TITLE, **{"per-page": 5})
-    for w in d.get("results", []):
-        if (w.get("title") or "").lower().startswith("visreg"):
-            return w["id"].rsplit("/", 1)[-1], w
-    raise RuntimeError("VISReg not found in OpenAlex")
 
-def oa_citations(wid):
-    out, cursor, count = [], "*", None
-    while cursor:
-        d = oa("works", filter=f"cites:{wid}", **{"per-page": 100, "cursor": cursor})
-        count = (d.get("meta") or {}).get("count", count)
-        out += [oa_work(w) for w in d.get("results", [])]
-        cursor = (d.get("meta") or {}).get("next_cursor")
+def adv(*texts):
+    return any(t and ADV_RE.search(t) for t in texts)
+
+
+def safe_run(name, fn, status, bucket):
+    """Run one collector; record ok/detail; never raise."""
+    try:
+        items, detail = fn()
+        bucket.extend(items)
+        status[name] = {"ok": True, "detail": detail}
+    except urllib.error.HTTPError as e:
+        status[name] = {"ok": False, "detail": "HTTP %s %s" % (e.code, e.reason)}
+    except Exception as e:  # noqa: BLE001 - must never fail the workflow
+        status[name] = {"ok": False, "detail": "%s: %s" % (type(e).__name__, e)}
+
+
+def collect_forks():
+    items = []
+    for page in (1, 2, 3):
+        batch = api_get(
+            "/repos/%s/forks" % OWNER_REPO,
+            {"sort": "newest", "per_page": 100, "page": page},
+        )
+        if not batch:
+            break
+        for f in batch:
+            items.append(
+                {
+                    "full_name": f.get("full_name"),
+                    "url": f.get("html_url"),
+                    "description": f.get("description"),
+                    "created_at": f.get("created_at"),
+                    "pushed_at": f.get("pushed_at"),
+                    "adv_keyword": adv(f.get("full_name"), f.get("description")),
+                    "recent_commits": [],
+                }
+            )
+        if len(batch) < 100:
+            break
         time.sleep(1)
-        if not d.get("results"): break
-    return out, count
-
-def oa_search(q):
-    d = oa("works", search=q, filter=f"from_publication_date:{SINCE}", **{"per-page": 15})
-    return [oa_work(w) for w in d.get("results", [])]
-
-# ---------------------------------------------------------------- arXiv
-NS = {"a": "http://www.w3.org/2005/Atom"}
-def arxiv_search(q):
-    sq = f'all:"{q}"' if " " in q else f"all:{q}"
-    u = ("https://export.arxiv.org/api/query?" + urllib.parse.urlencode(
-        {"search_query": sq, "start": 0, "max_results": 50, "sortBy": "submittedDate", "sortOrder": "descending"}))
-    root = ET.fromstring(get(u, {"Accept": "application/atom+xml"}))
-    res = []
-    for e in root.findall("a:entry", NS):
-        idurl = e.findtext("a:id", "", NS)
-        pub = e.findtext("a:published", "", NS)[:10]
-        if pub < SINCE:
-            continue
-        res.append({
-            "source": "arxiv", "arxiv_id": idurl.rsplit("/abs/", 1)[-1],
-            "title": " ".join((e.findtext("a:title", "", NS) or "").split()),
-            "abstract": " ".join((e.findtext("a:summary", "", NS) or "").split())[:1200],
-            "authors": [a.findtext("a:name", "", NS) for a in e.findall("a:author", NS)][:12],
-            "date": pub, "updated": e.findtext("a:updated", "", NS)[:10],
-            "categories": [c.get("term") for c in e.findall("a:category", NS)],
-            "url": idurl,
-        })
-    time.sleep(3.5)   # arXiv asks for >= 3 s between calls
-    return res
-
-# ---------------------------------------------------------------- Hugging Face
-def hf_search(q):
-    d = jget("https://huggingface.co/api/papers/search?q=" + urllib.parse.quote(q))
-    res = []
-    for p in d:
-        pub = (p.get("publishedAt") or p.get("paper", {}).get("publishedAt") or "")[:10]
-        pp = p.get("paper", p)
-        if pub and pub < SINCE:
-            continue   # HF search is semantic and returns old papers; keep only papers since the baseline date
-        res.append({"source": "huggingface", "arxiv_id": pp.get("id"), "title": pp.get("title"),
-                    "date": pub, "url": f"https://huggingface.co/papers/{pp.get('id')}"})
-    time.sleep(1)
-    return res
-
-# ---------------------------------------------------------------- main
-def run_family(name, fn, queries):
-    hits, fails = [], 0
-    for q in queries:
+    # Latest commit messages of the most recently pushed forks (that is where
+    # adversarial-training code usually first appears).
+    pushed = [i for i in items if i["pushed_at"] and i["pushed_at"] > i["created_at"]]
+    pushed.sort(key=lambda i: i["pushed_at"], reverse=True)
+    for it in pushed[:30]:
         try:
-            for h in fn(q):
-                h["matched_query"] = q
-                hits.append(h)
-        except Exception as e:
-            fails += 1
-            print(f"[{name}] query failed: {q}: {e}", file=sys.stderr)
-    ok = fails <= len(queries) * 0.2
-    mark(name, ok, f"{len(queries) - fails}/{len(queries)} queries ok, {len(hits)} raw hits")
-    return hits
+            commits = api_get(
+                "/repos/%s/commits" % it["full_name"], {"per_page": 5}
+            )
+            msgs = [
+                (c.get("commit", {}).get("message") or "").split("\n")[0][:200]
+                for c in commits
+            ]
+            it["recent_commits"] = msgs
+            if any(adv(m) for m in msgs):
+                it["adv_keyword"] = True
+        except Exception:  # noqa: BLE001
+            pass
+        time.sleep(0.5)
+    return items, "%d forks listed, %d with commits checked" % (
+        len(items),
+        min(len(pushed), 30),
+    )
+
+
+def collect_repos():
+    seen = {}
+    failures = 0
+    for q in REPO_QUERIES:
+        try:
+            res = api_get(
+                "/search/repositories",
+                {
+                    "q": "%s created:>=%s" % (q, SINCE),
+                    "sort": "updated",
+                    "order": "desc",
+                    "per_page": 30,
+                },
+            )
+            for r in res.get("items", []):
+                key = r.get("full_name")
+                if key in seen:
+                    seen[key]["matched_queries"].append(q)
+                    continue
+                seen[key] = {
+                    "full_name": key,
+                    "url": r.get("html_url"),
+                    "description": r.get("description"),
+                    "created_at": r.get("created_at"),
+                    "pushed_at": r.get("pushed_at"),
+                    "topics": r.get("topics", []),
+                    "adv_keyword": adv(key, r.get("description"), " ".join(r.get("topics", []))),
+                    "matched_queries": [q],
+                }
+        except Exception:  # noqa: BLE001
+            failures += 1
+        time.sleep(2.5)  # search API: 30 requests/minute
+    if failures > len(REPO_QUERIES) // 2:
+        raise RuntimeError("%d of %d repo searches failed" % (failures, len(REPO_QUERIES)))
+    return list(seen.values()), "%d queries, %d failed, %d unique repos" % (
+        len(REPO_QUERIES),
+        failures,
+        len(seen),
+    )
+
+
+def collect_issues():
+    items = []
+    for kind in ("issues",):  # the issues endpoint also returns pull requests
+        batch = api_get(
+            "/repos/%s/%s" % (OWNER_REPO, kind),
+            {"state": "all", "sort": "created", "direction": "desc", "per_page": 50},
+        )
+        for i in batch:
+            items.append(
+                {
+                    "number": i.get("number"),
+                    "title": i.get("title"),
+                    "url": i.get("html_url"),
+                    "is_pull_request": "pull_request" in i,
+                    "state": i.get("state"),
+                    "created_at": i.get("created_at"),
+                    "adv_keyword": adv(i.get("title"), (i.get("body") or "")[:1000]),
+                }
+            )
+    return items, "%d recent issues/PRs" % len(items)
+
+
+def collect_code():
+    seen = {}
+    for q in CODE_QUERIES:
+        res = api_get("/search/code", {"q": q, "per_page": 20})
+        for c in res.get("items", []):
+            repo = c.get("repository", {}).get("full_name")
+            key = "%s:%s" % (repo, c.get("path"))
+            if key in seen:
+                continue
+            seen[key] = {
+                "repo": repo,
+                "path": c.get("path"),
+                "url": c.get("html_url"),
+                "matched_query": q,
+                "adv_keyword": adv(c.get("path"), repo),
+            }
+        time.sleep(2.5)
+    return list(seen.values()), "%d queries, %d unique code hits" % (
+        len(CODE_QUERIES),
+        len(seen),
+    )
+
 
 def main():
-    started = datetime.datetime.now(datetime.timezone.utc)
-    out = {"generated_utc": started.strftime("%Y-%m-%dT%H:%M:%SZ"), "since": SINCE,
-           "visreg": {"arxiv_id": ARXIV_ID, "doi": DOI, "title": TITLE}}
+    started = now_utc()
+    status = {}
+    out = {"forks": [], "repos": [], "issues": [], "code": []}
 
-    # Task B: citation lists
-    try:
-        c = s2_citations(); out["s2_citations"] = c
-        mark("semantic_scholar_citations", True, f"{len(c)} citing papers retrieved (full paging)")
-    except Exception as e:
-        out["s2_citations"] = []; mark("semantic_scholar_citations", False, str(e)[:300])
-    try:
-        wid, w = oa_visreg_id(); out["visreg"]["openalex_id"] = wid
-        out["visreg"]["openalex_cited_by_count"] = w.get("cited_by_count")
-        c, cnt = oa_citations(wid); out["openalex_citations"] = c
-        ok = cnt is None or len(c) >= cnt
-        mark("openalex_citations", ok, f"{len(c)} retrieved of reported {cnt}")
-    except Exception as e:
-        out["openalex_citations"] = []; mark("openalex_citations", False, str(e)[:300])
+    safe_run("forks", collect_forks, status, out["forks"])
+    safe_run("repo_search", collect_repos, status, out["repos"])
+    safe_run("issues", collect_issues, status, out["issues"])
+    safe_run("code_search", collect_code, status, out["code"])
 
-    # Task A: discovery
-    out["arxiv_hits"] = run_family("arxiv_search", arxiv_search, QUERIES)
-    out["huggingface_hits"] = run_family("huggingface_search", hf_search, QUERIES)
-    out["openalex_hits"] = run_family("openalex_search", oa_search, QUERIES)
-
-    out["source_status"] = status
-    out["finished_utc"] = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    cit_ok = status["semantic_scholar_citations"]["ok"] or status["openalex_citations"]["ok"]
-    disc_ok = sum(status[k]["ok"] for k in ("arxiv_search", "huggingface_search", "openalex_search"))
-    out["reliable"] = bool(cit_ok and disc_ok >= 2)
-    os.makedirs("data", exist_ok=True)
-
-    def dump(name, obj):
-        with open(f"data/{name}", "w") as f:
-            json.dump(obj, f, indent=1, ensure_ascii=False)
-
-    # 1) tiny status file - the agent reads this first
-    dump("status.json", {
-        "generated_utc": out["generated_utc"], "finished_utc": out["finished_utc"],
-        "reliable": out["reliable"], "since": SINCE, "visreg": out["visreg"],
+    ok_count = sum(1 for s in status.values() if s["ok"])
+    result = {
+        "generated_utc": started,
+        "finished_utc": now_utc(),
+        "reliable": ok_count >= 2,
+        "since": SINCE,
+        "watched_repo": OWNER_REPO,
         "source_status": status,
-        "counts": {"s2_citations": len(out["s2_citations"]), "openalex_citations": len(out["openalex_citations"]),
-                   "discovery_unique_papers": 0},
-    })
-    # 2) citations (Task B)
-    dump("citations.json", {"generated_utc": out["generated_utc"],
-                            "s2_citations": out["s2_citations"], "openalex_citations": out["openalex_citations"]})
-    # 3) discovery (Task A): one row per paper, merged across sources and queries
-    merged = {}
-    for h in out["arxiv_hits"] + out["huggingface_hits"] + out["openalex_hits"]:
-        aid = (h.get("arxiv_id") or "")
-        aid = aid.split("v")[0] if aid else ""
-        key = aid or h.get("openalex_id") or (h.get("title") or "").lower()
-        m = merged.setdefault(key, {"key": key, "title": h.get("title"), "date": h.get("date"),
-                                    "authors": h.get("authors"), "abstract": (h.get("abstract") or "")[:600],
-                                    "url": h.get("url"), "sources": [], "matched_queries": []})
-        if h["source"] not in m["sources"]: m["sources"].append(h["source"])
-        if h.get("matched_query") not in m["matched_queries"]: m["matched_queries"].append(h.get("matched_query"))
-        if not m["abstract"] and h.get("abstract"): m["abstract"] = h["abstract"][:600]
-        if not m["authors"] and h.get("authors"): m["authors"] = h["authors"]
-    disc = sorted(merged.values(), key=lambda x: x.get("date") or "", reverse=True)
-    dump("discovery.json", {"generated_utc": out["generated_utc"], "papers": disc})
-    st = json.load(open("data/status.json")); st["counts"]["discovery_unique_papers"] = len(disc)
-    dump("status.json", st)
-    print(json.dumps(status, indent=1))
-    print("reliable:", out["reliable"], "| discovery papers:", len(disc))
+        "counts": {k: len(v) for k, v in out.items()},
+        "adv_keyword_counts": {
+            k: sum(1 for x in v if x.get("adv_keyword")) for k, v in out.items()
+        },
+        **out,
+    }
+    os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
+    with open(OUT_PATH, "w", encoding="utf-8") as fh:
+        json.dump(result, fh, ensure_ascii=False, indent=1)
+    print("github.json written:", result["counts"], result["adv_keyword_counts"])
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    try:
+        sys.exit(main())
+    except Exception as exc:  # noqa: BLE001 - never fail the workflow
+        print("fetch_github.py failed softly:", exc)
+        sys.exit(0)
