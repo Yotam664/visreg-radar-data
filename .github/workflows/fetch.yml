@@ -2,7 +2,7 @@ name: Fetch VISReg radar data
 
 on:
   schedule:
-        # Mon and Thu 07:17 UTC (10:17 or 09:17 Israel time). GitHub often starts scheduled jobs
+    # Mon and Thu 07:17 UTC (10:17 or 09:17 Israel time). GitHub often starts scheduled jobs
     # hours late, so this leaves ~13 h before the 23:47 (Israel) Claude run.
     - cron: "17 7 * * 1,4"
   workflow_dispatch: {}
@@ -24,6 +24,11 @@ jobs:
           S2_API_KEY: ${{ secrets.S2_API_KEY }}
           CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
         run: python fetch.py
+      - name: Fetch GitHub watch data (forks, repos, issues)
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python fetch_github.py
       - name: Commit result
         run: |
           git config user.name "visreg-radar-bot"
