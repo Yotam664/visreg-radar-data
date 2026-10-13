@@ -2,8 +2,9 @@ name: Fetch VISReg radar data
 
 on:
   schedule:
-    # Mon and Thu 17:00 UTC = 20:00 or 19:00 Israel time, ~4 h before the 23:47 Claude run
-    - cron: "0 17 * * 1,4"
+        # Mon and Thu 07:17 UTC (10:17 or 09:17 Israel time). GitHub often starts scheduled jobs
+    # hours late, so this leaves ~13 h before the 23:47 (Israel) Claude run.
+    - cron: "17 7 * * 1,4"
   workflow_dispatch: {}
 
 permissions:
