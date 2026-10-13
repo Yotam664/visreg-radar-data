@@ -1,6 +1,29 @@
 {
- "generated_utc": "2026-10-08T21:51:12Z",
+ "generated_utc": "2026-10-12T23:31:48Z",
  "s2_citations": [
+  {
+   "source": "semantic_scholar",
+   "s2_id": "dea7f4f155666b52d161e72f81a274e18406b68f",
+   "title": "LeWAM: End-to-End World and Action Modeling with JEPAs",
+   "year": 2026,
+   "date": "2026-10-08",
+   "venue": "",
+   "external_ids": {
+    "ArXiv": "2610.12818",
+    "CorpusId": 292828912
+   },
+   "authors": [
+    "Ming-Hao Fu",
+    "Tavis Siebert",
+    "Eryk Halicki",
+    "Randall Balestriero"
+   ],
+   "abstract": "Joint-embedding predictive architectures (JEPAs) learn compact latent world models without pixel reconstruction. Existing JEPA pipelines typically train visual representations and action-conditioned dynamics before adding a control policy or solver. We introduce LeWAM, an end-to-end JEPA for control with: (1) a joint training objective over next latent state prediction and action flow matching, and (2) an isotropic Gaussian constraint on the latent state, enabling a single model to support direct policy execution and efficient planning by evaluating sampled actions with its learned latent dynamics. Compared with prior JEPAs in visual planning, LeWAM improves success rate from 28.6% to 89.7% on contact-rich tasks and from 10.9% to 46.2% on long-horizon tasks, and plans 32.3 times faster. On behavior cloning tasks in simulation and physical robots, LeWAM is also competitive with established methods. Interpretability analyses show that LeWAM learns control-relevant representations and action distributions effectively guiding test-time planning and control.",
+   "url": "https://www.semanticscholar.org/paper/dea7f4f155666b52d161e72f81a274e18406b68f",
+   "contexts": [],
+   "intents": [],
+   "is_influential": false
+  },
   {
    "source": "semantic_scholar",
    "s2_id": "917706c14ce63a4d87eb72cac538d003d1e884c9",
@@ -15,7 +38,7 @@
    "authors": [
     "Ruo-Yu Zhao",
     "Yu-Ting Chen",
-    "Jin-Heng Zhang",
+    "Jin-He Zhang",
     "Zhe-Hao Zou",
     "Tong Che"
    ],

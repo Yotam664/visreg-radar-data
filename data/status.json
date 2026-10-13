@@ -1,6 +1,6 @@
 {
- "generated_utc": "2026-10-08T21:51:12Z",
- "finished_utc": "2026-10-08T21:53:04Z",
+ "generated_utc": "2026-10-12T23:31:48Z",
+ "finished_utc": "2026-10-13T00:00:02Z",
  "reliable": true,
  "since": "2026-06-01",
  "visreg": {
@@ -13,7 +13,7 @@
  "source_status": {
   "semantic_scholar_citations": {
    "ok": true,
-   "detail": "15 citing papers retrieved (full paging)"
+   "detail": "16 citing papers retrieved (full paging)"
   },
   "openalex_citations": {
    "ok": true,
@@ -25,16 +25,16 @@
   },
   "huggingface_search": {
    "ok": true,
-   "detail": "19/19 queries ok, 213 raw hits"
+   "detail": "19/19 queries ok, 220 raw hits"
   },
   "openalex_search": {
    "ok": true,
-   "detail": "19/19 queries ok, 270 raw hits"
+   "detail": "16/19 queries ok, 227 raw hits"
   }
  },
  "counts": {
-  "s2_citations": 15,
+  "s2_citations": 16,
   "openalex_citations": 0,
-  "discovery_unique_papers": 332
+  "discovery_unique_papers": 315
  }
 }
