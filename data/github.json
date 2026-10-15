@@ -1,6 +1,6 @@
 {
- "generated_utc": "2026-10-13T11:51:10Z",
- "finished_utc": "2026-10-13T11:51:57Z",
+ "generated_utc": "2026-10-15T12:42:15Z",
+ "finished_utc": "2026-10-15T12:42:49Z",
  "reliable": true,
  "since": "2026-06-01",
  "watched_repo": "HaiyuWu/visreg",
@@ -18,21 +18,21 @@
    "detail": "9 recent issues/PRs"
   },
   "code_search": {
-   "ok": true,
-   "detail": "3 queries, 58 unique code hits"
+   "ok": false,
+   "detail": "HTTP 429 Too Many Requests"
   }
  },
  "counts": {
   "forks": 5,
   "repos": 5,
   "issues": 9,
-  "code": 58
+  "code": 0
  },
  "adv_keyword_counts": {
   "forks": 0,
   "repos": 2,
   "issues": 0,
-  "code": 8
+  "code": 0
  },
  "forks": [
   {
@@ -87,7 +87,7 @@
    "url": "https://github.com/aidless/acvjepa-project",
    "description": "AC-VJEPA: adversarial-critic extension of V-JEPA; three preregistered experiments, honest negative results.",
    "created_at": "2026-08-15T12:00:31Z",
-   "pushed_at": "2026-10-10T21:05:09Z",
+   "pushed_at": "2026-10-14T09:19:31Z",
    "topics": [
     "negative-results",
     "preregistration",
@@ -119,7 +119,7 @@
    "url": "https://github.com/Yotam664/visreg-radar-data",
    "description": null,
    "created_at": "2026-10-07T18:15:05Z",
-   "pushed_at": "2026-10-13T11:49:57Z",
+   "pushed_at": "2026-10-13T11:51:58Z",
    "topics": [],
    "adv_keyword": false,
    "matched_queries": [
@@ -241,412 +241,5 @@
    "adv_keyword": false
   }
  ],
- "code": [
-  {
-   "repo": "wagnerra23/oimpresso.com",
-   "path": "memory/handoffs/2026-07-10-1255-gate-cego-visreg-pacote-dark.md",
-   "url": "https://github.com/wagnerra23/oimpresso.com/blob/2cbc057103b2cb3829ee17dfa62b99cb9fa6e281/memory/handoffs/2026-07-10-1255-gate-cego-visreg-pacote-dark.md",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "kandamukeshkumar4-cmyk/alphaedge",
-   "path": "goals/loop-v44-visreg/STATE.md",
-   "url": "https://github.com/kandamukeshkumar4-cmyk/alphaedge/blob/b9d71d39243f9ec34db5a1d224398da2de8e41f8/goals/loop-v44-visreg/STATE.md",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "wagnerra23/oimpresso.com",
-   "path": "memory/sessions/2026-07-11-ds-sync-loop-grade-adversarial.md",
-   "url": "https://github.com/wagnerra23/oimpresso.com/blob/2cbc057103b2cb3829ee17dfa62b99cb9fa6e281/memory/sessions/2026-07-11-ds-sync-loop-grade-adversarial.md",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": true
-  },
-  {
-   "repo": "wagnerra23/oimpresso.com",
-   "path": "memory/handoffs/2026-07-13-1719-financeiro-visreg-enforcing.md",
-   "url": "https://github.com/wagnerra23/oimpresso.com/blob/2cbc057103b2cb3829ee17dfa62b99cb9fa6e281/memory/handoffs/2026-07-13-1719-financeiro-visreg-enforcing.md",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "wagnerra23/oimpresso.com",
-   "path": "memory/handoffs/2026-07-16-2130-visreg-hardening-codex-91pct-us-uc-refutado.md",
-   "url": "https://github.com/wagnerra23/oimpresso.com/blob/2cbc057103b2cb3829ee17dfa62b99cb9fa6e281/memory/handoffs/2026-07-16-2130-visreg-hardening-codex-91pct-us-uc-refutado.md",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "wagnerra23/oimpresso.com",
-   "path": "database/seeders/VisregFinanceiroFlowSeeder.php",
-   "url": "https://github.com/wagnerra23/oimpresso.com/blob/2cbc057103b2cb3829ee17dfa62b99cb9fa6e281/database/seeders/VisregFinanceiroFlowSeeder.php",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "Aryan3212/continuous-latent-autoencoder",
-   "path": "SUPERVISOR_RESEARCH_REPORT.md",
-   "url": "https://github.com/Aryan3212/continuous-latent-autoencoder/blob/81342364ff2492cc71a1e39a7cee4903dfb2d035/SUPERVISOR_RESEARCH_REPORT.md",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "Kripta-Studios/CAUSAL-AH-JEPA",
-   "path": "BASELINES.md",
-   "url": "https://github.com/Kripta-Studios/CAUSAL-AH-JEPA/blob/296d64fb73e85e8ba43c3ad59654d436a70a93a7/BASELINES.md",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "shakacode/shakaperf",
-   "path": ".claude/skills/shaka-perf-add-coverage/SKILL.md",
-   "url": "https://github.com/shakacode/shakaperf/blob/80a9f6e16e7c62efa611026f0124698476947ca0/.claude/skills/shaka-perf-add-coverage/SKILL.md",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "Aryan3212/continuous-latent-autoencoder",
-   "path": "CHANGELOG.md",
-   "url": "https://github.com/Aryan3212/continuous-latent-autoencoder/blob/81342364ff2492cc71a1e39a7cee4903dfb2d035/CHANGELOG.md",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "wagnerra23/oimpresso.com",
-   "path": "memory/sessions/2026-07-16-smoke-auto-hibrido-shell-95pct.md",
-   "url": "https://github.com/wagnerra23/oimpresso.com/blob/2cbc057103b2cb3829ee17dfa62b99cb9fa6e281/memory/sessions/2026-07-16-smoke-auto-hibrido-shell-95pct.md",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "Aryan3212/continuous-latent-autoencoder",
-   "path": "CODEBASE.md",
-   "url": "https://github.com/Aryan3212/continuous-latent-autoencoder/blob/81342364ff2492cc71a1e39a7cee4903dfb2d035/CODEBASE.md",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "wagnerra23/oimpresso.com",
-   "path": "memory/sessions/2026-08-28-session-02.md",
-   "url": "https://github.com/wagnerra23/oimpresso.com/blob/2cbc057103b2cb3829ee17dfa62b99cb9fa6e281/memory/sessions/2026-08-28-session-02.md",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "kandamukeshkumar4-cmyk/alphaedge",
-   "path": "goals/loop-v47-forecast-ui/STATE.md",
-   "url": "https://github.com/kandamukeshkumar4-cmyk/alphaedge/blob/b9d71d39243f9ec34db5a1d224398da2de8e41f8/goals/loop-v47-forecast-ui/STATE.md",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "Aryan3212/continuous-latent-autoencoder",
-   "path": "SUPERVISOR_RESEARCH_REPORT_UPDATED.md",
-   "url": "https://github.com/Aryan3212/continuous-latent-autoencoder/blob/81342364ff2492cc71a1e39a7cee4903dfb2d035/SUPERVISOR_RESEARCH_REPORT_UPDATED.md",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "wagnerra23/oimpresso.com",
-   "path": "memory/reguas/INDICE-INVISIVEIS-2026-07.md",
-   "url": "https://github.com/wagnerra23/oimpresso.com/blob/2cbc057103b2cb3829ee17dfa62b99cb9fa6e281/memory/reguas/INDICE-INVISIVEIS-2026-07.md",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "thinh-dao/Clean-Label-Physical-Backdoor-Attacks",
-   "path": "forest/witchcoven/witch_base.py",
-   "url": "https://github.com/thinh-dao/Clean-Label-Physical-Backdoor-Attacks/blob/700e66f4b803afebe40d0f84f719fc2191a29805/forest/witchcoven/witch_base.py",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": true
-  },
-  {
-   "repo": "BernieZhu/arxiv-daily-digest",
-   "path": "Archive/2026-08/arxiv_digest_2026-08-12.md",
-   "url": "https://github.com/BernieZhu/arxiv-daily-digest/blob/84df9e86aa3c42f51d9f850e6ada7bb4741f8430/Archive/2026-08/arxiv_digest_2026-08-12.md",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "tazwarmohammed/tamanna-msc-thesis-report",
-   "path": "chapters/chapter_3.tex",
-   "url": "https://github.com/tazwarmohammed/tamanna-msc-thesis-report/blob/5b5f73ad731d862568edc1f99539b918fae1ad87/chapters/chapter_3.tex",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "maloq/PointCloudMaterials",
-   "path": "docs/encoder_research/encoders.md",
-   "url": "https://github.com/maloq/PointCloudMaterials/blob/05e3e8ca57f42ea95f63f7f11c0aa05426fa5896/docs/encoder_research/encoders.md",
-   "matched_query": "VISReg adversarial",
-   "adv_keyword": false
-  },
-  {
-   "repo": "rfordatascience/tidytuesday",
-   "path": "data/2023/2023-12-26/internal_calls.csv",
-   "url": "https://github.com/rfordatascience/tidytuesday/blob/b2258ae949e3c64099c4e6d00ff4b68dba1d6d0e/data/2023/2023-12-26/internal_calls.csv",
-   "matched_query": "visreg pgd",
-   "adv_keyword": false
-  },
-  {
-   "repo": "thinh-dao/Clean-Label-Physical-Backdoor-Attacks",
-   "path": "forest/witchcoven/witch_hidden_trigger.py",
-   "url": "https://github.com/thinh-dao/Clean-Label-Physical-Backdoor-Attacks/blob/700e66f4b803afebe40d0f84f719fc2191a29805/forest/witchcoven/witch_hidden_trigger.py",
-   "matched_query": "visreg pgd",
-   "adv_keyword": true
-  },
-  {
-   "repo": "thinh-dao/Clean-Label-Physical-Backdoor-Attacks",
-   "path": "forest/witchcoven/witch_feature_matching.py",
-   "url": "https://github.com/thinh-dao/Clean-Label-Physical-Backdoor-Attacks/blob/700e66f4b803afebe40d0f84f719fc2191a29805/forest/witchcoven/witch_feature_matching.py",
-   "matched_query": "visreg pgd",
-   "adv_keyword": true
-  },
-  {
-   "repo": "shakacode/shakaperf",
-   "path": "packages/shaka-perf/SETUP-twin-servers.md",
-   "url": "https://github.com/shakacode/shakaperf/blob/80a9f6e16e7c62efa611026f0124698476947ca0/packages/shaka-perf/SETUP-twin-servers.md",
-   "matched_query": "visreg pgd",
-   "adv_keyword": false
-  },
-  {
-   "repo": "tech234a/annotation-urls",
-   "path": "EF_urls.txt",
-   "url": "https://github.com/tech234a/annotation-urls/blob/5c0300471b87c6a5f3dd8883484f8155b5ff33d7/EF_urls.txt",
-   "matched_query": "visreg pgd",
-   "adv_keyword": false
-  },
-  {
-   "repo": "tongzx/nt5src",
-   "path": "Source/XPSP1/NT/multimedia/opengl/server/wgl/driver.c",
-   "url": "https://github.com/tongzx/nt5src/blob/daad8a087a4e75422ec96b7911f1df4669989611/Source/XPSP1/NT/multimedia/opengl/server/wgl/driver.c",
-   "matched_query": "visreg pgd",
-   "adv_keyword": false
-  },
-  {
-   "repo": "selfrender/Windows-Server-2003",
-   "path": "multimedia/opengl/server/wgl/driver.c",
-   "url": "https://github.com/selfrender/Windows-Server-2003/blob/5c6fe3db626b63a384230a1aa6b92ac416b0765f/multimedia/opengl/server/wgl/driver.c",
-   "matched_query": "visreg pgd",
-   "adv_keyword": false
-  },
-  {
-   "repo": "reallyTG/typeR",
-   "path": "evaluation/cran.txt",
-   "url": "https://github.com/reallyTG/typeR/blob/0b318cfb37f84280e13e3a4ee559f32bd20c7907/evaluation/cran.txt",
-   "matched_query": "visreg pgd",
-   "adv_keyword": false
-  },
-  {
-   "repo": "Derek-Jones/ESEUR-workshop",
-   "path": "part-1/regression-1.html",
-   "url": "https://github.com/Derek-Jones/ESEUR-workshop/blob/f25c16cdb0b79f461dd3e035c32bcac991ba86c7/part-1/regression-1.html",
-   "matched_query": "visreg pgd",
-   "adv_keyword": false
-  },
-  {
-   "repo": "thinh-dao/Clean-Label-Physical-Backdoor-Attacks",
-   "path": "forest/witchcoven/witch_gradient_matching.py",
-   "url": "https://github.com/thinh-dao/Clean-Label-Physical-Backdoor-Attacks/blob/700e66f4b803afebe40d0f84f719fc2191a29805/forest/witchcoven/witch_gradient_matching.py",
-   "matched_query": "visreg pgd",
-   "adv_keyword": true
-  },
-  {
-   "repo": "AileneKane/radcliffe",
-   "path": "Analyses/wholegroup_paper1/phensm_analyses_bb.R",
-   "url": "https://github.com/AileneKane/radcliffe/blob/a2e1af49487369ed878293a2f717e9dc33c6f89c/Analyses/wholegroup_paper1/phensm_analyses_bb.R",
-   "matched_query": "visreg pgd",
-   "adv_keyword": false
-  },
-  {
-   "repo": "thinh-dao/Clean-Label-Physical-Backdoor-Attacks",
-   "path": "forest/witchcoven/witch_parameter_matching.py",
-   "url": "https://github.com/thinh-dao/Clean-Label-Physical-Backdoor-Attacks/blob/700e66f4b803afebe40d0f84f719fc2191a29805/forest/witchcoven/witch_parameter_matching.py",
-   "matched_query": "visreg pgd",
-   "adv_keyword": true
-  },
-  {
-   "repo": "r-hub/cchecksbadges",
-   "path": "names.txt",
-   "url": "https://github.com/r-hub/cchecksbadges/blob/ae80cdf62eb3c61564c53cf002f01780997fe6b9/names.txt",
-   "matched_query": "visreg pgd",
-   "adv_keyword": false
-  },
-  {
-   "repo": "softcite/softcite_kb",
-   "path": "data/resources/cran_package_names.txt",
-   "url": "https://github.com/softcite/softcite_kb/blob/210b0178503ed56715059bbd883d4f50983677b8/data/resources/cran_package_names.txt",
-   "matched_query": "visreg pgd",
-   "adv_keyword": false
-  },
-  {
-   "repo": "icculus/2ine",
-   "path": "os2imports.pl",
-   "url": "https://github.com/icculus/2ine/blob/1ca194f39b6322d5c6cc1006616ed6a62f74c193/os2imports.pl",
-   "matched_query": "visreg pgd",
-   "adv_keyword": false
-  },
-  {
-   "repo": "ChuaHanChong/ResearchBrain",
-   "path": "General/01_Foundation-Models.md",
-   "url": "https://github.com/ChuaHanChong/ResearchBrain/blob/6ec409e91dca783236e3ce401347b97764fe7b5e/General/01_Foundation-Models.md",
-   "matched_query": "visreg pgd",
-   "adv_keyword": false
-  },
-  {
-   "repo": "freddiewanah/UnitTest-DL",
-   "path": "datasets/0 9129_project_name.txt",
-   "url": "https://github.com/freddiewanah/UnitTest-DL/blob/4a853d57b1bd3a0f8c6672511e95058300730810/datasets/0 9129_project_name.txt",
-   "matched_query": "visreg pgd",
-   "adv_keyword": false
-  },
-  {
-   "repo": "ErisBlastar/osfree",
-   "path": "tools/lxlite/os2api.rc",
-   "url": "https://github.com/ErisBlastar/osfree/blob/9472591e4e8f9c8e3b78e6b8d6f0634c63387fd3/tools/lxlite/os2api.rc",
-   "matched_query": "visreg pgd",
-   "adv_keyword": false
-  },
-  {
-   "repo": "jdblischak/jdb-conda",
-   "path": "data/pkgs-to-add.txt",
-   "url": "https://github.com/jdblischak/jdb-conda/blob/f5a338ded2209d92a59a17964decc59dd51a947e/data/pkgs-to-add.txt",
-   "matched_query": "visreg pgd",
-   "adv_keyword": false
-  },
-  {
-   "repo": "LuthiWorks/LuthiModel",
-   "path": "docs/reviews/2026-08-10_pruning-and-visreg-brief-for-opus.md",
-   "url": "https://github.com/LuthiWorks/LuthiModel/blob/0e55791b461af73045b32c09443c4d6c71801ba0/docs/reviews/2026-08-10_pruning-and-visreg-brief-for-opus.md",
-   "matched_query": "visreg attack",
-   "adv_keyword": false
-  },
-  {
-   "repo": "LuthiWorks/LuthiModel",
-   "path": "docs/research/2026-08-11_visreg-family-registration.md",
-   "url": "https://github.com/LuthiWorks/LuthiModel/blob/0e55791b461af73045b32c09443c4d6c71801ba0/docs/research/2026-08-11_visreg-family-registration.md",
-   "matched_query": "visreg attack",
-   "adv_keyword": false
-  },
-  {
-   "repo": "thinh-dao/Clean-Label-Physical-Backdoor-Attacks",
-   "path": "experiment/gm_animal_attack.sh",
-   "url": "https://github.com/thinh-dao/Clean-Label-Physical-Backdoor-Attacks/blob/700e66f4b803afebe40d0f84f719fc2191a29805/experiment/gm_animal_attack.sh",
-   "matched_query": "visreg attack",
-   "adv_keyword": true
-  },
-  {
-   "repo": "thinh-dao/Clean-Label-Physical-Backdoor-Attacks",
-   "path": "experiment/mttp_animal_attack.sh",
-   "url": "https://github.com/thinh-dao/Clean-Label-Physical-Backdoor-Attacks/blob/700e66f4b803afebe40d0f84f719fc2191a29805/experiment/mttp_animal_attack.sh",
-   "matched_query": "visreg attack",
-   "adv_keyword": true
-  },
-  {
-   "repo": "Fenral/svingbue",
-   "path": "scripts/lib/flightglass-visreg.mjs",
-   "url": "https://github.com/Fenral/svingbue/blob/0afcf668f8c3197f19772edbfa914b5b627c2bf3/scripts/lib/flightglass-visreg.mjs",
-   "matched_query": "visreg attack",
-   "adv_keyword": false
-  },
-  {
-   "repo": "tech234a/annotation-urls",
-   "path": "WI_urls.txt",
-   "url": "https://github.com/tech234a/annotation-urls/blob/5c0300471b87c6a5f3dd8883484f8155b5ff33d7/WI_urls.txt",
-   "matched_query": "visreg attack",
-   "adv_keyword": false
-  },
-  {
-   "repo": "tech234a/annotation-urls",
-   "path": "qH_urls.txt",
-   "url": "https://github.com/tech234a/annotation-urls/blob/5c0300471b87c6a5f3dd8883484f8155b5ff33d7/qH_urls.txt",
-   "matched_query": "visreg attack",
-   "adv_keyword": false
-  },
-  {
-   "repo": "tech234a/annotation-urls",
-   "path": "Tl_urls.txt",
-   "url": "https://github.com/tech234a/annotation-urls/blob/5c0300471b87c6a5f3dd8883484f8155b5ff33d7/Tl_urls.txt",
-   "matched_query": "visreg attack",
-   "adv_keyword": false
-  },
-  {
-   "repo": "tech234a/annotation-urls",
-   "path": "04_urls.txt",
-   "url": "https://github.com/tech234a/annotation-urls/blob/5c0300471b87c6a5f3dd8883484f8155b5ff33d7/04_urls.txt",
-   "matched_query": "visreg attack",
-   "adv_keyword": false
-  },
-  {
-   "repo": "tech234a/annotation-urls",
-   "path": "un_urls.txt",
-   "url": "https://github.com/tech234a/annotation-urls/blob/5c0300471b87c6a5f3dd8883484f8155b5ff33d7/un_urls.txt",
-   "matched_query": "visreg attack",
-   "adv_keyword": false
-  },
-  {
-   "repo": "tech234a/annotation-urls",
-   "path": "ni_urls.txt",
-   "url": "https://github.com/tech234a/annotation-urls/blob/5c0300471b87c6a5f3dd8883484f8155b5ff33d7/ni_urls.txt",
-   "matched_query": "visreg attack",
-   "adv_keyword": false
-  },
-  {
-   "repo": "trackawesomelist/trackawesomelist",
-   "path": "content/2026/05/28/README.md",
-   "url": "https://github.com/trackawesomelist/trackawesomelist/blob/2d52f057f374e97b6b77d8586deb0e804beefa37/content/2026/05/28/README.md",
-   "matched_query": "visreg attack",
-   "adv_keyword": false
-  },
-  {
-   "repo": "tech234a/annotation-urls",
-   "path": "kW_urls.txt",
-   "url": "https://github.com/tech234a/annotation-urls/blob/5c0300471b87c6a5f3dd8883484f8155b5ff33d7/kW_urls.txt",
-   "matched_query": "visreg attack",
-   "adv_keyword": false
-  },
-  {
-   "repo": "tech234a/annotation-urls",
-   "path": "bE_urls.txt",
-   "url": "https://github.com/tech234a/annotation-urls/blob/5c0300471b87c6a5f3dd8883484f8155b5ff33d7/bE_urls.txt",
-   "matched_query": "visreg attack",
-   "adv_keyword": false
-  },
-  {
-   "repo": "tech234a/annotation-urls",
-   "path": "2-_urls.txt",
-   "url": "https://github.com/tech234a/annotation-urls/blob/5c0300471b87c6a5f3dd8883484f8155b5ff33d7/2-_urls.txt",
-   "matched_query": "visreg attack",
-   "adv_keyword": false
-  },
-  {
-   "repo": "tech234a/annotation-urls",
-   "path": "YD_urls.txt",
-   "url": "https://github.com/tech234a/annotation-urls/blob/5c0300471b87c6a5f3dd8883484f8155b5ff33d7/YD_urls.txt",
-   "matched_query": "visreg attack",
-   "adv_keyword": false
-  },
-  {
-   "repo": "tech234a/annotation-urls",
-   "path": "tn_urls.txt",
-   "url": "https://github.com/tech234a/annotation-urls/blob/5c0300471b87c6a5f3dd8883484f8155b5ff33d7/tn_urls.txt",
-   "matched_query": "visreg attack",
-   "adv_keyword": false
-  },
-  {
-   "repo": "tech234a/annotation-urls",
-   "path": "Fu_urls.txt",
-   "url": "https://github.com/tech234a/annotation-urls/blob/5c0300471b87c6a5f3dd8883484f8155b5ff33d7/Fu_urls.txt",
-   "matched_query": "visreg attack",
-   "adv_keyword": false
-  },
-  {
-   "repo": "tech234a/annotation-urls",
-   "path": "Hh_urls.txt",
-   "url": "https://github.com/tech234a/annotation-urls/blob/5c0300471b87c6a5f3dd8883484f8155b5ff33d7/Hh_urls.txt",
-   "matched_query": "visreg attack",
-   "adv_keyword": false
-  }
- ]
+ "code": []
 }
