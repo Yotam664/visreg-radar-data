@@ -1,6 +1,6 @@
 {
- "generated_utc": "2026-10-15T12:42:15Z",
- "finished_utc": "2026-10-15T12:42:49Z",
+ "generated_utc": "2026-10-19T14:44:07Z",
+ "finished_utc": "2026-10-19T14:44:41Z",
  "reliable": true,
  "since": "2026-06-01",
  "watched_repo": "HaiyuWu/visreg",
@@ -11,7 +11,7 @@
   },
   "repo_search": {
    "ok": true,
-   "detail": "11 queries, 0 failed, 5 unique repos"
+   "detail": "11 queries, 0 failed, 6 unique repos"
   },
   "issues": {
    "ok": true,
@@ -24,13 +24,13 @@
  },
  "counts": {
   "forks": 5,
-  "repos": 5,
+  "repos": 6,
   "issues": 9,
   "code": 0
  },
  "adv_keyword_counts": {
   "forks": 0,
-  "repos": 2,
+  "repos": 3,
   "issues": 0,
   "code": 0
  },
@@ -83,20 +83,24 @@
  ],
  "repos": [
   {
-   "full_name": "aidless/acvjepa-project",
-   "url": "https://github.com/aidless/acvjepa-project",
-   "description": "AC-VJEPA: adversarial-critic extension of V-JEPA; three preregistered experiments, honest negative results.",
-   "created_at": "2026-08-15T12:00:31Z",
-   "pushed_at": "2026-10-14T09:19:31Z",
-   "topics": [
-    "negative-results",
-    "preregistration",
-    "pytorch",
-    "research",
-    "self-supervised-learning",
-    "vjepa",
-    "world-models"
-   ],
+   "full_name": "ItsKaiwenDu/V-JEPA-Robust-Overfitting",
+   "url": "https://github.com/ItsKaiwenDu/V-JEPA-Robust-Overfitting",
+   "description": "Investigating robust overfitting during adversarial fine-tuning of V-JEPA 2 with its native latent prediction objective.",
+   "created_at": "2026-10-17T17:59:57Z",
+   "pushed_at": "2026-10-17T22:52:42Z",
+   "topics": [],
+   "adv_keyword": true,
+   "matched_queries": [
+    "adversarial JEPA"
+   ]
+  },
+  {
+   "full_name": "Hetens/AdversarialFeaturesJEPA",
+   "url": "https://github.com/Hetens/AdversarialFeaturesJEPA",
+   "description": null,
+   "created_at": "2026-10-17T16:01:01Z",
+   "pushed_at": "2026-10-17T16:01:06Z",
+   "topics": [],
    "adv_keyword": true,
    "matched_queries": [
     "adversarial JEPA"
@@ -119,7 +123,7 @@
    "url": "https://github.com/Yotam664/visreg-radar-data",
    "description": null,
    "created_at": "2026-10-07T18:15:05Z",
-   "pushed_at": "2026-10-13T11:51:58Z",
+   "pushed_at": "2026-10-15T12:42:50Z",
    "topics": [],
    "adv_keyword": false,
    "matched_queries": [
