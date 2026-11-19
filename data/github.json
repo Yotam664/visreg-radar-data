@@ -1,6 +1,6 @@
 {
- "generated_utc": "2026-11-16T17:06:04Z",
- "finished_utc": "2026-11-16T17:06:36Z",
+ "generated_utc": "2026-11-19T16:37:13Z",
+ "finished_utc": "2026-11-19T16:37:44Z",
  "reliable": true,
  "since": "2026-06-01",
  "watched_repo": "HaiyuWu/visreg",
@@ -87,7 +87,7 @@
    "url": "https://github.com/ItsKaiwenDu/V-JEPA-Robust-Overfitting",
    "description": "Investigating robust overfitting during adversarial fine-tuning of V-JEPA 2 with its native latent prediction objective.",
    "created_at": "2026-10-17T17:59:57Z",
-   "pushed_at": "2026-11-16T07:34:39Z",
+   "pushed_at": "2026-11-18T19:26:17Z",
    "topics": [],
    "adv_keyword": true,
    "matched_queries": [
@@ -99,7 +99,7 @@
    "url": "https://github.com/Hetens/AdversarialFeaturesJEPA",
    "description": null,
    "created_at": "2026-10-17T16:01:01Z",
-   "pushed_at": "2026-11-12T21:01:29Z",
+   "pushed_at": "2026-11-17T19:09:13Z",
    "topics": [],
    "adv_keyword": true,
    "matched_queries": [
@@ -123,7 +123,7 @@
    "url": "https://github.com/Yotam664/visreg-radar-data",
    "description": null,
    "created_at": "2026-10-07T18:15:05Z",
-   "pushed_at": "2026-11-12T16:01:08Z",
+   "pushed_at": "2026-11-16T17:06:37Z",
    "topics": [],
    "adv_keyword": false,
    "matched_queries": [
